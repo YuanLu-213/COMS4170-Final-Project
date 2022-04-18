@@ -94,6 +94,124 @@ learning = [
     },
 ]
 
+quizzes = [
+    {
+        "id":"1",
+        "question":"What rule or violation is violated in the following GIF based on the hand signal of referee?",
+        "hint":"Think about if offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling.",
+        "choice":["Illegal Screen","Blocking","Charging","Travelling"],
+        "img":"https://c.tenor.com/uYWM4E5tzEcAAAAC/referee-travel.gif"
+    
+    },
+    {
+        "id":"2",
+        "question":"What is the foul or violation in the following play?",
+        "hint":"Look carefully to see whether it's an offensive foul or a defensive foul.",
+        "choice":["Blocking","Illegal Screen","Charging","Hand Check"],
+        "video":"zfpBxKjYLT8",
+        "start":"37",
+        "stop":"52",
+        "mute":"no"
+    },
+    {
+        "id":"3",
+        "question":"What is the foul or violation in the following play?",
+        "hint":"Does the defender establish the position?",
+        "choice":["Charging","Blocking","Illegal Use of Hands","Illegal Screen"],
+        "video":"UJbBUi7SgtM",
+        "start":"63",
+        "stop":"66",
+        "mute":"yes"
+    },
+    {
+        "id":"4",
+        "question":"What rule or violation is violated in the following image based on the hand signal of referee?",
+        "hint":"Maybe to focus on the hand.",
+        "choice":["Illegal Use of Hands","Hand Check","Travelling","Blocking"],
+        "img":"https://dsgmedia.blob.core.windows.net/pub/2017/12/HandCheck1.jpg"
+    },
+    {
+        "id":"5",
+        "question":"Did the player in 10 red violate any rule? If he did, what rule did he break?",
+        "hint":"Look carefully on whether he had a contact with the other player.",
+        "choice":["No, he did not violate any rules.","Yes, he made a charging foul.","Yes, he made a illegal screen foul.","Yes, he made a travelling foul."],
+        "video":"t9Z58NOR6c8",
+        "start":"21",
+        "stop":"30",
+        "mute":"no"
+    },
+    {
+        "id":"6",
+        "question":"What is the foul or violation in the following play?",
+        "hint":"Look carefully on whether he had a contact with the other player.",
+        "choice":["Hand Check","Charging","Illegal Screen","Illegal Use of Hand"],
+        "video":"sRYsGCKrLlI",
+        "start":"73",
+        "stop":"79",
+        "mute":"yes"
+    },
+    {
+        "id":"7",
+        "question":"To distinguish between charging and blocking is difficult, can you get it right?",
+        "hint":"Look carefully on whether the defender had establish a legal position.",
+        "choice":["Blocking","Charging"],
+        "video":"3fmalq_EGMY",
+        "start":"152",
+        "stop":"156",
+        "mute":"no"
+    },
+    {
+        "id":"8",
+        "question":"Sometimes it is hard to judge whether it is a travelling foul, can you get it right?",
+        "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, then it results in a travelling foul.",
+        "choice":["Yes, it is a travelling foul","No, it isn't."],
+        "video":"x0h_ETeFGCg",
+        "start":"264",
+        "stop":"270",
+        "mute":"no"
+    },
+    {
+        "id":"9",
+        "question":"Did the player in 1 white make an illegal screen faul?",
+        "hint":"When a player fails to maintain a set position or doesn't allow the defender the opportunity to avoid contact while setting a screen or pick, a illegal screen will be given. Screens must be performed in a standstill manner. A step must separate the screener and defender while the screener may not move laterally or towards the defender that they are setting the screen on.",
+        "choice":["Yes, it is an illegal screen faul","No, it isn't."],
+        "video":"e7aErY-r414",
+        "start":"71",
+        "stop":"76",
+        "mute":"no"
+    },
+    {
+        "id":"10",
+        "question":"What rule or violation is violated in the following GIF?",
+        "hint":"First make sure which player break the rule, offensive or defensive player?",
+        "choice":["Blocking","Illegal Use of Hand","Hand Check","Charging"],
+        "img":"http://fc02.deviantart.net/fs71/f/2010/263/0/5/kbwadeshot_by_immortal24-d2z4szz.gif"
+    }
+]
 @app.route("/")
 def home_page():
     return render_template('home.html')
+
+@app.route("/quiz_start")
+def quiz_start():
+    return render_template('quiz_start.html')
+
+
+
+@app.route("/quiz/<id>")
+def quiz(id = None):
+    global quiz
+    print(id)
+    id = int(id)
+    id -= 1
+    print(id)
+    data = quizzes[id]
+    print(data)
+    if 'img' in data:
+        return render_template("quiz.html", data = data)
+    elif 'video' in data:
+        return render_template("quiz_video.html", data = data)
+
+
+if __name__ == '__main__':
+   app.run(debug = True)
