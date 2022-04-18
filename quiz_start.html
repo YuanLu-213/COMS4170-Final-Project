@@ -1,0 +1,26 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+<script>
+    $(document).ready(function(){
+        $('#quiz').click(function(){
+            /* redirect the webpage to quiz.html */
+            window.location.assign("/quiz/1")
+        })
+    })
+</script>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <div>Test on yourself and see if you are a master of basketball rules</div>
+        <button type="button" class="btn btn-success" id ='quiz'>START</button>
+    </div>
+</div>
+    
+    
+
+
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+<style>
+    .intro{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+    #off-intro{
+        font-size: large;
+    }
+    button{
+        background-color: black;
+        color: white;
+    }
+</style>
+<div class="row intro">
+    <div id="off-intro">Imagine going to a NBA Final game 7 to watch your favorite team, but a fan of opposing team next to you is complaining about the referee calling offensive foul on his team all the time. You wish that you can teach him some rules so that you can enjoy the game. So now let’s learn about some offensive rules and violations in basketball.
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <a href="/learning/o/0">
+            <button>Traveling</button>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="/learning/o/4">
+            <button>Illegal Screen</button>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="/learning/o/5">
+            <button>Charging</button>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-1">
+        <a href="/learning/of/0">
+            <button id="next">NEXT</button>
+        </a>
+    </div>
+</div>
+{% endblock%}

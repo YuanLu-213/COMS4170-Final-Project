@@ -1,4 +1,5 @@
 from crypt import methods
+import re
 from flask import Flask
 from flask import render_template, request, jsonify, Response, redirect
 import random
@@ -282,7 +283,7 @@ AnswerForQuiz = [
     },
     {
         "id":"7",
-        "answer":"Charging"
+        "answer":"Blocking"
     },
     {
         "id":"8",
@@ -367,5 +368,12 @@ def learningpage(ftype = None, index = None):
             data.append(foul)
     return render_template("learning.html", data = data, ftype = ftype, index = int(index))
 
+@app.route("/defensive")
+def defensive_page():
+    return render_template("defensive.html")
+    
+@app.route("/offensive")
+def offensive_page():
+    return render_template("offensive.html")
 if __name__ == '__main__':
    app.run(debug = True)

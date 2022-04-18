@@ -1,0 +1,92 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+<script>
+    $(document).ready(function() {
+        let data = {{data|tojson}};
+        let ftype =  '{{ftype|safe}}';
+        let index = parseInt('{{index|safe}}');
+        $('#next').click(function() {
+            /* redirect the webpage to quiz.html */
+            index += 1;
+            if(index >= data.length) {
+                index = 0;
+                if(ftype == "o"){
+                    window.location.assign("/defensive");
+                }
+                else if(ftype == 'd'){
+                    window.location.assign("/quiz_start");
+                }
+            }
+            else{
+                window.location.assign("/learning/"+ftype+"/"+index);
+            }
+        })
+        $("#prev").click(function(){
+            index -= 1
+            if(index < 0) {
+                index = 0;
+                if(ftype == 'd'){
+                    window.location.assign("/defensive");
+                }
+                else if(ftype == 'o'){
+                    window.location.assign("/offensive");
+                }
+            }
+            else{
+                window.location.assign("/learning/"+ftype+"/"+index);
+            }
+        })
+    });
+</script>
+
+<style>
+    .image {
+        max-width: 20vw;
+        max-height: auto;
+    }
+    #block{
+        display: block;
+        background-color: black;
+        color: white;
+        height: 40px;
+        font-size: large;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 6px;
+    }
+</style>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h2>
+            {{data[index].name}}
+        </h2>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-9'>
+        <p>
+            {{data[index].description}}
+        </p>
+    </div>
+    <div class="justify-content-center">
+        <div id="block">
+            <div>What would Referee do?</div>
+        </div>
+        <img src={{data[index].img}} class="image">
+        <br>
+        <br>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-primary" id="prev">Previous</button>
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-primary" id="next">Next</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
