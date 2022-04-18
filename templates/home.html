@@ -1,5 +1,26 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-    <div>Welcome! Let's learn some more about basketball!</div>
+    <script type="text/javascript" src="{{url_for('static', filename='home.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script>
+        var learning = {{learning | tojson}}
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="row">
+                    <span id="home-intro"></span>
+                </div>
+                <div class="row">
+                    <button href="/offensive">Let's Get Started</button>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        
+    </div>
 {% endblock %}
