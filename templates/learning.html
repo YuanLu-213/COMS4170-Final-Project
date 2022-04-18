@@ -1,0 +1,49 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+<script>
+    $(document).ready(function() {
+        let data = {{data|tojson}}
+        let ftype =  '{{ftype|safe}}'
+        let index = parseInt('{{index|safe}}')
+        $('#next').click(function() {
+            /* redirect the webpage to quiz.html */
+            index += 1;
+            if(index >= data.length) {
+                index = 0;
+            }
+            window.location.assign("/learning/"+ftype+"/"+index)
+        })
+    });
+</script>
+
+<style>
+    .image {
+        max-width: 20vw;
+        max-height: auto;
+    }
+</style>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h2>
+            {{data[index].name}}
+        </h2>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-9'>
+        <p>
+            {{data[index].description}}
+        </p>
+    </div>
+    <div class="justify-content-center">
+        <img src={{data[index].img}} class="image">
+        <br>
+        <button type="button" class="btn btn-primary" id="next">Next</button>
+    </div>
+</div>
+
+{% endblock %}

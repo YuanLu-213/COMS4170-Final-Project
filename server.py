@@ -10,12 +10,14 @@ learning = [
         'name': 'Blocking Foul',
         'description': 'When a defender makes contact with an offensive player without establishing position, without giving proper space or is in the charge circle, a blocking foul will be given.',
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Blocking.jpg',
-        'video': ['https://www.youtube.com/embed/WPBdbYR5Bnk?start=133&end=340']
+        'video': ['https://www.youtube.com/embed/WPBdbYR5Bnk?start=133&end=340'],
+        'type': 'd'
     },
     {
         'id': 2,
         'name': 'Establish position',
         'description': 'A defensive player with both feet standing on the ground and torso square facing the opponent is said to have established position.',
+        'type': 'd'
     },
     {
         'id': 3,
@@ -28,7 +30,8 @@ learning = [
         'video': [
             "https://www.youtube.com/embed/01NsieAjzdU?start=118&end=158",
             'https://www.youtube.com/embed/ERzhKUakC6M?end=20'
-        ]
+        ],
+        'type': 'd'
     },
     {
         'id': 4,
@@ -37,18 +40,21 @@ learning = [
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/HandCheck1.jpg',
         'video': [
             "https://www.youtube.com/embed/VLHqHDCw3JI"
-        ]
+        ],
+        'type': 'd'
     },
     {
         'id': 5,
         'name': 'Travelling',
         'description': "When an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, a travelling violation will be called.",
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Traveling.jpg',
+        'type': 'o'
     },
     {
         'id': 6,
         'name': 'Pivot Foot',
         'description': "When a player lands with one foot when performs a jump shot, the landing foot is the pivot foot, and when a players lands with both feet, either can be pivot foot.",
+        'type': 'o'
     },
     {
         'id': 7,
@@ -56,17 +62,19 @@ learning = [
         'description': "The two steps starts counting when the player stops dribbling and gaining full control of the basketball. So while moving and having one foot on the floor while catching the ball or ending a dribble the next foot or feet to touch the floor is step one and will become the pivot foot. The catching step is step 0.",
         'video': [
             "https://www.youtube.com/embed/J5xGKioMsIo?start=128&end=155"
-        ]
+        ],
+        'type': 'o'
     },
     {
         'id': 8,
-        'name': 'Traveling Speical Caes',
+        'name': 'Traveling Special Caes',
         'video': [
             'A player who falls to the floor with the ball has not traveled unless they get up to at least one knee.',
             'Rolling over to get away from another player is traveling.',
             'Sliding along the floor is not traveling.',
             'A player may not touch the floor consecutively with the same foot or both feet after ending his dribble or gaining control of the ball.'
-        ]
+        ],
+        'type': 'o'
     },
     {
         'id': 9,
@@ -81,7 +89,8 @@ learning = [
             "https://www.youtube.com/embed/H8bbQZCHSF8?start=255&end=277",
             "https://www.youtube.com/embed/H8bbQZCHSF8?start=370&end=394",
             "https://www.youtube.com/embed/H8bbQZCHSF8?start=419&end=441"
-        ]
+        ],
+        'type': 'o'
     },
     {
         'id': 10,
@@ -90,7 +99,8 @@ learning = [
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Charging_Pushing.jpg',
         'video': [
             "https://www.youtube.com/embed/WnNT0Sy226w?start=129&end=153"
-        ]
+        ],
+        'type': 'o'
     },
 ]
 
@@ -212,6 +222,13 @@ def quiz(id = None):
     elif 'video' in data:
         return render_template("quiz_video.html", data = data)
 
+@app.route("/learning/<ftype>/<index>")
+def learningpage(ftype = None, index = None):
+    data = []
+    for foul in learning:
+        if foul['type'] == ftype:
+            data.append(foul)
+    return render_template("learning.html", data = data, ftype = ftype, index = int(index))
 
 if __name__ == '__main__':
    app.run(debug = True)
