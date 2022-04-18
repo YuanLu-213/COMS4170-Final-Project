@@ -200,7 +200,7 @@ quizzes = [
 ]
 @app.route("/")
 def home_page():
-    return render_template('home.html')
+    return render_template('home.html', learning=learning)
 
 @app.route("/quiz_start")
 def quiz_start():
