@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <script>
         var learning = {{learning | tojson}}
+        var tracking = {{tracking | tojson}}
     </script>
     <style>
         .row1{
@@ -23,7 +24,17 @@
             font-size: 50px;
             border-radius: 10px;
         }
-        #button{
+        #button-1{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        #resume{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        #button-3{
             margin-left: auto;
             margin-right: auto;
         }
@@ -37,8 +48,16 @@
                     </span>
                 </div>
                 <div class="row row2">
-                    <a id="button" href="/offensive">
+                    <a id="button-1" href="/offensive">
                         <button>Let's Get Started</button>
+                    </a>
+                </div>
+                <div class="row row3">
+                    <button id="resume">Resume</button>
+                </div>
+                <div class="row row4">
+                    <a id="button-3" href="/quiz_start">
+                        <button>Test Yourself</button>
                     </a>
                 </div>
             </div>

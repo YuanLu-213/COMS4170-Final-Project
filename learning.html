@@ -7,20 +7,35 @@
         let data = {{data|tojson}};
         let ftype =  '{{ftype|safe}}';
         let index = parseInt('{{index|safe}}');
+
+        let location = window.location.href;
+        console.log(location);
+
+
+        $('h4').hide();
+
+        $('#hint').click(function(){
+            $("h4").slideToggle();
+        })
+
         $('#next').click(function() {
             /* redirect the webpage to quiz.html */
             index += 1;
             if(index >= data.length) {
                 index = 0;
                 if(ftype == "o"){
-                    window.location.assign("/defensive");
+                    location = "/defensive"
+                    // window.location.assign("/defensive");
+                    window.location.assign(location);
                 }
                 else if(ftype == 'd'){
                     window.location.assign("/quiz_start");
                 }
             }
             else{
-                window.location.assign("/learning/"+ftype+"/"+index);
+                location = "/learning/"+ftype+"/"+index
+                // window.location.assign("/learning/"+ftype+"/"+index);
+                window.location.assign(location);
             }
         })
         $("#prev").click(function(){
@@ -28,16 +43,38 @@
             if(index < 0) {
                 index = 0;
                 if(ftype == 'd'){
-                    window.location.assign("/defensive");
+                    location = "/defensive"
+                    // window.location.assign("/defensive");
+                    window.location.assign(location);
                 }
                 else if(ftype == 'o'){
-                    window.location.assign("/offensive");
+                    location = "/offensive"
+                    // window.location.assign("/offensive");
+                    window.location.assign(location);
                 }
             }
             else{
-                window.location.assign("/learning/"+ftype+"/"+index);
+                location = "/learning/"+ftype+"/"+index
+                // window.location.assign("/learning/"+ftype+"/"+index);
+                window.location.assign(location);
             }
         })
+        $.ajax({
+                type: "POST",
+                url: "/track_learning",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(location),
+                success: function(res){
+                    console.log('succeed')
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request)
+                    console.log(status)
+                    console.log(error)
+                }
+            });
     });
 </script>
 
@@ -67,10 +104,27 @@
 </div>
 
 <div class = 'row'>
-    <div class = 'col-9'>
-        <p>
-            {{data[index].description}}
-        </p>
+    <div class = 'col-md-9'>
+        <div class="row">
+            <p>
+                {{data[index].description}}
+            </p>
+        </div>
+        {% for each in data[index].hint %}
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="hint">{{each[0]}}</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{each[1]}}</h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
     <div class="justify-content-center">
         <div id="block">
