@@ -7,16 +7,39 @@
         let data = {{data|tojson}};
         let ftype =  '{{ftype|safe}}';
         let index = parseInt('{{index|safe}}');
+        console.log(data);
 
         let location = window.location.href;
         console.log(location);
+        
+        let i = 0;
 
+        if (data[index]["hint"][0][2]){
+            id0 = data[index]["hint"][0][2];
+            console.log("id:"+id0);
+            $('#'+id0).hide();
 
-        $('h4').hide();
+            $('.'+id0).click(function(){
+                $('#'+id0).slideToggle();
+            })
+            i += 1;
+        };
+        
+        if (i < (data[index]["hint"]).length){
+            id1 = data[index]["hint"][1][2];
+            console.log("id:"+id1);
+            $('#'+id1).hide();
 
-        $('#hint').click(function(){
-            $("h4").slideToggle();
-        })
+            $('.'+id1).click(function(){
+                $('#'+id1).slideToggle();
+            })
+        };
+
+//         $('h4').hide();
+
+//         $('#hint').click(function(){
+//             $("h4").slideToggle();
+//         })
 
         $('#next').click(function() {
             /* redirect the webpage to quiz.html */
@@ -111,13 +134,13 @@
         <div class="row">
             <div class="row">
                 <div class="col-md-12">
-                    <button id="hint">{{each[0]}}</button>
+                    <button class = '{{each[2]}}'>{{each[0]}}</button>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-md-12">
-                    <h4>{{each[1]}}</h4>
+                    <h4 id = '{{each[2]}}'>{{each[1]}}</h4>
                 </div>
             </div>
         </div>
