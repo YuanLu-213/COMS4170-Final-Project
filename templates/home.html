@@ -7,20 +7,59 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <script>
         var learning = {{learning | tojson}}
+        var tracking = {{tracking | tojson}}
     </script>
+    <style>
+        .row1{
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        #home-intro{
+            text-align: center;
+            font-size: xx-large
+        }
+        button{
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            border-radius: 10px;
+        }
+        #button-1{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        #resume{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        #button-3{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div class="row">
-                    <span id="home-intro"></span>
-                </div>
-                <div class="row">
-                    <button href="/offensive">Let's Get Started</button>
-                </div>
+        <div class="col-md-6">
+            <div class="row row1">
+                <span id="home-intro">Welcome to Mr.Basketball. Here you can learn about all types of rules in basketball. No matter if you are a player, a fan of basketball, or a basketball rookie, this site will make you a master of basketball rules. You can also test yourself and compete with others to see who is the real Mr/Ms.Basketball.
+                </span>
             </div>
-            <div class="col-md-3"></div>
         </div>
-        
+        <div class="col-md-6">
+            <div class="row">
+                <a id="button-1" href="/offensive">
+                    <button>Let's Get Started</button>
+                </a>
+            </div>
+            <div class="row">
+                <button id="resume">Resume</button>
+            </div>
+            <div class="row">
+                <a id="button-3" href="/quiz_start">
+                    <button>Test Yourself</button>
+                </a>
+            </div>
+        </div>
     </div>
 {% endblock %}

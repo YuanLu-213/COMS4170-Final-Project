@@ -306,9 +306,7 @@ def quiz(id = None):
     global quizzes
     id = int(id)
     id -= 1
-    print(id)
     data = quizzes[id]
-    print(data)
     if 'img' in data:
         return render_template("quiz.html", data = data)
     elif 'video' in data:
@@ -322,7 +320,6 @@ def check():
 
     if "POST" == request.method:
         if "radAnswer" in request.form:
-            print(request.form)
             UserAnswer = request.form['radAnswer']
             quizNumber = request.form['button']
             currentTime = datetime.now()
@@ -331,16 +328,13 @@ def check():
             #store user's state to UserChoiceOnQuiz
             UserChoiceOnQuiz[int(quizNumber)-1]['answer'] = UserAnswer
             UserChoiceOnQuiz[int(quizNumber)-1]['submitTime'] = timestring
-            print(UserChoiceOnQuiz)
 
             #compare to the correct answer
             correcrAnswer = AnswerForQuiz[int(quizNumber)-1]['answer']
-            print("correct answer:",correcrAnswer)
 
             #if correct
             if UserAnswer == correcrAnswer:
                 score += 1
-                print('score:',score)
             if "img" in quizzes[int(quizNumber)-1]:
                 return render_template("quiz_feedback.html", data = quizzes[int(quizNumber)-1], score = score, UserAnswer = UserAnswer, correcrAnswer = correcrAnswer)
             else:
@@ -373,7 +367,6 @@ def track_learning():
 
     curr_location = request.get_json()
     tracking.append(curr_location)
-    print(tracking)
     return jsonify(0)
 
 if __name__ == '__main__':
