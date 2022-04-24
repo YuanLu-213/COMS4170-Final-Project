@@ -15,7 +15,7 @@ learning = [
         'description': 'When a defender makes contact with an offensive player without establishing position, without giving proper space or is in the charge circle, a blocking foul will be given.',
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Blocking.jpg',
         'video': ['https://www.youtube.com/embed/WPBdbYR5Bnk?start=133&end=340'],
-        'hint': [['Establish position', 'A defensive player with both feet standing on the ground and torso square facing the opponent is said to have established position.']],
+        'hint': [['Establish position', 'A defensive player with both feet standing on the ground and torso square facing the opponent is said to have established position.',"0"]],
         'type': 'd'
     },
     {
@@ -51,8 +51,8 @@ learning = [
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Traveling.jpg',
         'video': ["https://www.youtube.com/embed/J5xGKioMsIo?start=128&end=155"],
         'hint': [
-            ['Pivot Foot', "When a player lands with one foot when performs a jump shot, the landing foot is the pivot foot, and when a players lands with both feet, either can be pivot foot."],
-            ['Two Steps', "The two steps starts counting when the player stops dribbling and gaining full control of the basketball. So while moving and having one foot on the floor while catching the ball or ending a dribble the next foot or feet to touch the floor is step one and will become the pivot foot. The catching step is step 0."]
+            ['Pivot Foot', "When a player lands with one foot when performs a jump shot, the landing foot is the pivot foot, and when a players lands with both feet, either can be pivot foot.","0"],
+            ['Two Steps', "The two steps starts counting when the player stops dribbling and gaining full control of the basketball. So while moving and having one foot on the floor while catching the ball or ending a dribble the next foot or feet to touch the floor is step one and will become the pivot foot. The catching step is step 0.","1"]
         ],
         'type': 'o'
     },
