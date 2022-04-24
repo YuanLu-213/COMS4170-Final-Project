@@ -109,12 +109,12 @@ quizzes = [
     {
         "id":"2",
         "question":"What is the foul or violation in the following play?",
-        "hint":"Look carefully to see whether it's an offensive foul or a defensive foul.",
+        "hint":"Look carefully to see whether the player in dark jersey is in an established guarding position. Whether he is there before the player in white.",
         "choice":["Blocking","Illegal Screen","Charging","Hand Check"],
         "video":"zfpBxKjYLT8",
-        "start":"37",
-        "stop":"52",
-        "mute":"no"
+        "start":"83",
+        "stop":"110",
+        "mute":"yes"
     },
     {
         "id":"3",
@@ -135,22 +135,22 @@ quizzes = [
     },
     {
         "id":"5",
-        "question":"Did the player in 10 red violate any rule? If he did, what rule did he break?",
+        "question":"Did the player in 21 white violate any rule? If he did, what rule did he break?",
         "hint":"Look carefully on whether he had a contact with the other player.",
-        "choice":["No, he did not violate any rules.","Yes, he made a charging foul.","Yes, he made a illegal screen foul.","Yes, he made a travelling foul."],
-        "video":"t9Z58NOR6c8",
-        "start":"21",
-        "stop":"30",
-        "mute":"no"
+        "choice":["No, he did not violate any rules.","Yes, he made a charging foul.","Yes, he made a illegal screen.","Yes, he made a travelling violation."],
+        "video":"H8bbQZCHSF8",
+        "start":"90",
+        "stop":"101",
+        "mute":"yes"
     },
     {
         "id":"6",
         "question":"What is the foul or violation in the following play?",
         "hint":"Look carefully on whether he had a contact with the other player.",
         "choice":["Hand Check","Charging","Illegal Screen","Illegal Use of Hand"],
-        "video":"sRYsGCKrLlI",
-        "start":"73",
-        "stop":"79",
+        "video":"aZarLAPyj-c",
+        "start":"198",
+        "stop":"205",
         "mute":"yes"
     },
     {
@@ -158,20 +158,20 @@ quizzes = [
         "question":"To distinguish between charging and blocking is difficult, can you get it right?",
         "hint":"Look carefully on whether the defender had establish a legal position.",
         "choice":["Blocking","Charging"],
-        "video":"3fmalq_EGMY",
-        "start":"152",
-        "stop":"156",
-        "mute":"no"
+        "video":"8Oj5R6kzFfY",
+        "start":"33",
+        "stop":"49",
+        "mute":"yes"
     },
     {
         "id":"8",
         "question":"Sometimes it is hard to judge whether it is a travelling foul, can you get it right?",
-        "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, then it results in a travelling foul.",
+        "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, then it results in a travelling violation. Think carefully about how to count the two steps",
         "choice":["Yes, it is a travelling foul.","No, it isn't."],
-        "video":"x0h_ETeFGCg",
-        "start":"264",
-        "stop":"270",
-        "mute":"no"
+        "video":"KZu5iE7yrPI",
+        "start":"23",
+        "stop":"32",
+        "mute":"yes"
     },
     {
         "id":"9",
@@ -252,7 +252,7 @@ AnswerForQuiz = [
     },
     {
         "id":"2",
-        "answer":"Blocking"
+        "answer":"Charging"
     },
     {
         "id":"3",
@@ -272,11 +272,11 @@ AnswerForQuiz = [
     },
     {
         "id":"7",
-        "answer":"Blocking"
+        "answer":"Charging"
     },
     {
         "id":"8",
-        "answer":"Yes, it is a travelling foul."
+        "answer":"No, it isn't."
     },
     {
         "id":"9",
