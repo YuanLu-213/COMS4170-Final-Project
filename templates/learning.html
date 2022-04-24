@@ -14,7 +14,7 @@
         
         let i = 0;
 
-        if (data[index]["hint"][0][2]){
+        if (i < (data[index]["hint"]).length){
             id0 = data[index]["hint"][0][2];
             console.log("id:"+id0);
             $('#'+id0).hide();
