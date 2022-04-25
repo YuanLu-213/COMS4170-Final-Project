@@ -1,0 +1,180 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+<script>
+    $(document).ready(function(){
+        // $('h4').hide();
+
+        // $('#hint').click(function(){
+        //     $("h4").slideToggle();
+        // })
+
+        $("#dialog").dialog({
+            autoOpen: false,
+            modal: true
+        });
+
+        $("#dialog-check").dialog({
+            autoOpen: false,
+            modal: true
+        });
+
+        $( "form" ).submit(function( event ) {
+            if ($('input[name=radAnswer]:checked').length > 0) {
+                return;
+            }
+        
+            $("#dialog-check").dialog({
+                buttons : {
+                    "Confirm" : function() {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            $("#dialog-check").dialog("open");
+            event.preventDefault();
+        });
+
+    });
+    $("#confirm").click(function(e) {
+        e.preventDefault();
+        var targetUrl = $(this).attr("href");
+
+        $("#dialog").dialog({
+            buttons : {
+                "Confirm" : function() {
+                    window.location.href = targetUrl;
+                },
+                "Cancel" : function() {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        $("#dialog").dialog("open");
+    })
+</script>
+
+<div id="dialog" title="Confirmation Required">
+    Leaving the page will automatically zero out the score. Are you sure about this?
+</div>
+
+<div id="dialog-check" title="Confirmation Required">
+    You need to select one answer to submit the quiz.
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h2>
+            Question {{data.id}}
+        </h2>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h3>
+            {{data.question}}
+        </h3>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-4'>
+        <!---<iframe src={{data.video}} title="Question{{data.id}}'s media" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+        <div id="myvideo"></div>
+        <!--
+        <div class="wrapper">
+            <div class="frame-container">
+               <iframe src="https://www.youtube.com/embed/01NsieAjzdU?start=118&end=158" frameborder="0"></iframe>
+            </div>
+        </div>
+        -->
+    </div>
+    <div class = 'col-md-4'>
+        <form action="/checkAnswer" method="POST">
+            {% for each in data.choice %}
+            <input type='radio' name = 'radAnswer' value="{{each}}"> 
+            <span>{{each}}</span>
+            <br>
+            {% endfor %}
+            <button type="submit" class = 'hero-btn' name = 'button' value = "{{data.id}}">Submit</button>
+        </form> 
+    </div>
+    <div class = 'col-md-4'>
+        <div class = 'row'>
+            <div class = 'col-md-12'>
+                <button class="hovertext" id ='hint' data-hover="{{data.hint}}">Hint</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
+<script async src="https://www.youtube.com/iframe_api"></script>
+<script>
+    let data = {{data|tojson}}
+    var player;
+    var videoId= data['video'];
+    var startSeconds = data['start'];  // set your own video start time when loop play
+    var endSeconds = data['stop'];   // set your own video end time when loop play
+    var playerConfig = {
+        height: '250',
+        width: '100%',
+        videoId: videoId,
+        playerVars: {
+            autoplay: 0,            // Not auto-play the video on load
+            controls: 0,            // hide pause/play buttons in player
+            showinfo: 0,            // Hide the video title
+            modestbranding: 1,      // Hide the Youtube Logo
+            fs: 1,                  // Hide the full screen button
+            cc_load_policy: 0,      // Hide closed captions
+            iv_load_policy: 3,      // Hide the Video Annotations
+            start: startSeconds,
+            end: endSeconds,
+            autohide: 1,             // Hide video controls when playing
+        },
+        events: {
+            'onStateChange': onStateChange,       // reference to Iframe API
+            'onReady': onPlayerReady
+        }
+    };
+
+    //excute the video in div
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('myvideo', playerConfig);
+    }
+
+    function onPlayerReady(event) {              // mute or unmute the video when loaded
+        if (data["mute"] == "no"){
+            event.target.playVideo(); 
+        }
+        else{
+            event.target.mute();
+        }
+                    
+    }
+
+    //repload the video when onStateChange=YT.PlayerState.ENDED)
+    function onStateChange(state) {
+        if (state.data === YT.PlayerState.ENDED) {
+            player.loadVideoById({
+                videoId: videoId,
+                startSeconds: startSeconds,
+                endSeconds: endSeconds
+            });
+        }
+    }
+
+</script>
+    
+{% endblock %}
