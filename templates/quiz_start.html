@@ -10,12 +10,32 @@
         })
     })
 </script>
+<style>
+    .row{
+        margin-bottom: 20px;
+    }
+    #test-intro{
+        text-align: center;
+        font-size: x-large;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #quiz{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        background-color: black;
+        border-radius: 10px;
+        border: dimgrey;
+    }
+
+</style>
 
 <div class = 'row'>
-    <div class = 'col-md-12'>
-        <div>Test on yourself and see if you are a master of basketball rules</div>
-        <button type="button" class="btn btn-success" id ='quiz'>START</button>
-    </div>
+    <div id="test-intro">Test on yourself and see if you are a master of basketball rules</div>
+</div>
+<div class="row">
+    <button type="button" class="btn btn-success" id ='quiz'>START</button>
 </div>
     
 {% endblock %}

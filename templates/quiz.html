@@ -82,10 +82,11 @@
 </div>
 
 <div class = 'row'>
-    <div class = 'col-md-4'>
+    <div class = 'col-md-6'>
         <img src={{data.img}} alt="question{{data.id}}'s media"> 
     </div>
-    <div class = 'col-md-4'>
+    <div class="col-md-1"></div>
+    <div class = 'col-md-3'>
         
         <form action="/checkAnswer" method="POST">
             {% for each in data.choice %}
@@ -97,7 +98,7 @@
         </form>
        
     </div>
-    <div class = 'col-md-4'>
+    <div class = 'col-md-2'>
         <div class = 'row'>
             <div class = 'col-md-12'>
                 <button class="hovertext" id ='hint' data-hover="{{data.hint}}">Hint</button>
