@@ -1,0 +1,152 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+<script>
+    let correcrAnswer = {{correcrAnswer|tojson}}
+    let UserAnswer = {{UserAnswer|tojson}}
+    let data = {{data|tojson}}
+
+    $(document).ready(function(){
+        $("#dialog").dialog({
+            autoOpen: false,
+            modal: true
+        });
+
+        $('h4').hide();
+        $('h3').hide();
+        if(correcrAnswer == UserAnswer){
+            $('#correct').show();
+        }
+        else{
+            $('#wrong').show();
+        }
+
+
+        $('#hint').click(function(){
+            $("h4").slideToggle();
+        })
+
+        $("form").submit(function(e) {
+            e.preventDefault(); // <==stop page refresh==>
+        });
+
+        if(data['id'] =='10'){
+            $("#{{data.id}}").html("View Your Score");
+            $('#{{data.id}}').click(function(){
+                /* redirect to the final score page */
+                window.location.assign("/final")
+            })
+        }
+        else{
+            $("#{{data.id}}").html("NEXT");
+            $('#{{data.id}}').click(function(){
+                /* redirect to the next quiz page */
+                let id = $(this).attr('id');
+                id = parseInt(id)+1;
+                console.log(id);
+                window.location.assign("/quiz/"+id+"")
+            })
+        }
+
+        
+    });
+
+    $("#confirm").click(function(e) {
+        e.preventDefault();
+        var targetUrl = $(this).attr("href");
+
+        $("#dialog").dialog({
+            buttons : {
+                "Confirm" : function() {
+                    window.location.href = targetUrl;
+                },
+                "Cancel" : function() {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        $("#dialog").dialog("open");
+    })
+</script>
+
+<div id="dialog" title="Confirmation Required">
+    Leaving the page will automatically zero out the score. Are you sure about this?
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h2>
+            Question {{data.id}}
+        </h2>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h3>
+            {{data.question}}
+        </h3>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-4'>
+        <img src={{data.img}} alt="question{{data.id}}'s media"> 
+    </div>
+    <div class = 'col-md-4'>
+        
+        <form action="" method="POST">
+            {% for each in data.choice %}
+            <input type='radio' name = 'radAnswer' value="{{each}}"> 
+            <span>{{each}}</span>
+            <br>
+            {% endfor %}
+        </form>
+       
+    </div>
+    <div class = 'col-md-4'>
+        <div class = 'row'>
+            <div class = 'col-md-12'>
+                <button class="hovertext" id ='hint' data-hover="{{data.hint}}">Hint</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h3 id = 'correct'>
+            CORRECT!
+        </h3>
+        <h3 id = 'wrong'>
+            WRONG!  
+        </h3>
+        <div>
+            Your Answer is {{UserAnswer}}
+        </div>
+        <div>
+            Correct Answer is {{correcrAnswer}}
+        </div>
+        <div>
+            Your Current Score is {{cscore}}/10
+        </div>
+
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <button type="button" class="btn btn-success" id = "{{data.id}}"></button>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
+{% endblock %}
