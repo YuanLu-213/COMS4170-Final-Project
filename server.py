@@ -137,7 +137,7 @@ quizzes = [
         "id":"5",
         "question":"Did the player in 21 white violate any rule? If he did, what rule did he break?",
         "hint":"Look carefully on whether he had a contact with the other player.",
-        "choice":["No, he did not violate any rules.","Yes, he made a charging foul.","Yes, he made a illegal screen.","Yes, he made a travelling violation."],
+        "choice":["No, he did not violate any rules.","Yes, he made a charging foul.","Yes, he made a illegal screen foul.","Yes, he made a travelling violation."],
         "video":"H8bbQZCHSF8",
         "start":"90",
         "stop":"101",
@@ -181,7 +181,7 @@ quizzes = [
         "video":"e7aErY-r414",
         "start":"71",
         "stop":"76",
-        "mute":"no"
+        "mute":"yes"
     },
     {
         "id":"10",
