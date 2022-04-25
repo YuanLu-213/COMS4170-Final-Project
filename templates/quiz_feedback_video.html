@@ -20,7 +20,6 @@
             /* redirect to the next quiz page */
             let id = $(this).attr('id');
             id = parseInt(id)+1;
-            console.log(id);
             window.location.assign("/quiz/"+id+"");
         })
 
@@ -117,7 +116,6 @@
     let data = {{data|tojson}}
     var player;
     var videoId= data['video'];
-    console.log(videoId);
     var startSeconds = data['start'];  // set your own video start time when loop play
     var endSeconds = data['stop'];   // set your own video end time when loop play
     var playerConfig = {

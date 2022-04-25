@@ -1,6 +1,5 @@
 $(document).ready(function(){
     let location = window.location.href;
-    console.log(location);
 
     $.ajax({
         type: "POST",
