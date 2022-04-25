@@ -14,7 +14,7 @@ learning = [
         'name': 'Blocking Foul',
         'description': 'When a defender makes contact with an offensive player without establishing position, without giving proper space or is in the charge circle, a blocking foul will be given.',
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Blocking.jpg',
-        'video': ['https://www.youtube.com/embed/WPBdbYR5Bnk?start=133&end=340'],
+        'video': ['https://www.youtube.com/embed/WPBdbYR5Bnk?start=133&end=340&controls=0'],
         'hint': [['Establish position', 'A defensive player with both feet standing on the ground and torso square facing the opponent is said to have established position.',"0"]],
         'type': 'd'
     },
@@ -27,8 +27,8 @@ learning = [
             ],
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/IllegalHandUse_ReachingIn.jpg',
         'video': [
-            "https://www.youtube.com/embed/01NsieAjzdU?start=118&end=158",
-            'https://www.youtube.com/embed/ERzhKUakC6M?end=20'
+            "https://www.youtube.com/embed/01NsieAjzdU?start=118&end=158&controls=0",
+            'https://www.youtube.com/embed/ERzhKUakC6M?end=20&controls=0'
         ],
         'hint':[],
         'type': 'd'
@@ -39,7 +39,7 @@ learning = [
         'description': "When a player continually uses their hands on an opposing player. This foul is typically called on defenders at the perimeter to keep a safe distance between the ball handler and the basket.",
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/HandCheck1.jpg',
         'video': [
-            "https://www.youtube.com/embed/VLHqHDCw3JI"
+            "https://www.youtube.com/embed/01NsieAjzdU?start=117&end=229&controls=0"
         ],
         'hint':[],
         'type': 'd'
@@ -49,7 +49,7 @@ learning = [
         'name': 'Travelling',
         'description': "When an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, a travelling violation will be called.",
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Traveling.jpg',
-        'video': ["https://www.youtube.com/embed/J5xGKioMsIo?start=128&end=155"],
+        'video': ["https://www.youtube.com/embed/J5xGKioMsIo?start=128&end=155&controls=0"],
         'hint': [
             ['Pivot Foot', "When a player lands with one foot when performs a jump shot, the landing foot is the pivot foot, and when a players lands with both feet, either can be pivot foot.","0"],
             ['Two Steps', "The two steps starts counting when the player stops dribbling and gaining full control of the basketball. So while moving and having one foot on the floor while catching the ball or ending a dribble the next foot or feet to touch the floor is step one and will become the pivot foot. The catching step is step 0.","1"]
@@ -77,9 +77,9 @@ learning = [
                 ],
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Moving_PickScreen.jpg',
         'video': [
-            "https://www.youtube.com/embed/H8bbQZCHSF8?start=255&end=277",
-            "https://www.youtube.com/embed/H8bbQZCHSF8?start=370&end=394",
-            "https://www.youtube.com/embed/H8bbQZCHSF8?start=419&end=441"
+            "https://www.youtube.com/embed/H8bbQZCHSF8?start=255&end=305&controls=0",
+            "https://www.youtube.com/embed/H8bbQZCHSF8?start=370&end=394&controls=0",
+            "https://www.youtube.com/embed/H8bbQZCHSF8?start=419&end=441&controls=0"
         ],
         'hint':[],
         'type': 'o'
@@ -90,7 +90,7 @@ learning = [
         'description': "When an offensive player makes contact with a defender or moving into a defender’s torso who has established position in front of an offensive player with or without the basketball and is not moving. Some courts, especially those used for youth basketball, make this call easier to identify by having a “charge circle” marked below the basket. If a defender is outside the circle with their feet planted, it is a charge.",
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Charging_Pushing.jpg',
         'video': [
-            "https://www.youtube.com/embed/WnNT0Sy226w?start=129&end=153"
+            "https://www.youtube.com/embed/WnNT0Sy226w?start=129&end=153&controls=0"
         ],
         'hint':[],
         'type': 'o'
@@ -167,7 +167,7 @@ quizzes = [
         "id":"8",
         "question":"Sometimes it is hard to judge whether it is a travelling foul, can you get it right?",
         "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, then it results in a travelling violation. Think carefully about how to count the two steps",
-        "choice":["Yes, it is a travelling foul.","No, it isn't."],
+        "choice":["Yes, it is a travelling.","No, it isn't."],
         "video":"KZu5iE7yrPI",
         "start":"23",
         "stop":"32",
@@ -175,7 +175,7 @@ quizzes = [
     },
     {
         "id":"9",
-        "question":"Did the player in 1 white make an illegal screen faul?",
+        "question":"Did the player in 1 white make an illegal screen violation?",
         "hint":"When a player fails to maintain a set position or doesn't allow the defender the opportunity to avoid contact while setting a screen or pick, a illegal screen will be given. Screens must be performed in a standstill manner. A step must separate the screener and defender while the screener may not move laterally or towards the defender that they are setting the screen on.",
         "choice":["Yes, it is an illegal screen faul.","No, it isn't."],
         "video":"e7aErY-r414",
