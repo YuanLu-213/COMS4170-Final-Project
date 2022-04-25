@@ -290,8 +290,8 @@ AnswerForQuiz = [
 
 tracking = []
 
-#initial score
-score = 0
+#initial score array
+score = []
 
 @app.route("/")
 def home_page():
@@ -299,6 +299,8 @@ def home_page():
 
 @app.route("/quiz_start")
 def quiz_start():
+    score.append(0)
+    print(score)
     return render_template('quiz_start.html')
 
 @app.route("/quiz/<id>")
@@ -317,6 +319,9 @@ def check():
     global score
     global UserChoiceOnQuiz
     global AnswerForQuiz
+    
+    print(score)
+    currentScore = score[-1]
 
     if "POST" == request.method:
         if "radAnswer" in request.form:
@@ -334,16 +339,18 @@ def check():
 
             #if correct
             if UserAnswer == correcrAnswer:
-                score += 1
+                currentScore += 1
+                score[-1] = currentScore
+                print(score)
             if "img" in quizzes[int(quizNumber)-1]:
-                return render_template("quiz_feedback.html", data = quizzes[int(quizNumber)-1], score = score, UserAnswer = UserAnswer, correcrAnswer = correcrAnswer)
+                return render_template("quiz_feedback.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer)
             else:
-                return render_template("quiz_feedback_video.html", data = quizzes[int(quizNumber)-1], score = score, UserAnswer = UserAnswer, correcrAnswer = correcrAnswer)
+                return render_template("quiz_feedback_video.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer)
 
 @app.route("/final")
 def final():
     global score
-    return render_template("final.html",score = score)
+    return render_template("final.html",cscore = score[-1])
 
 @app.route("/learning/<ftype>/<index>")
 def learningpage(ftype = None, index = None):
