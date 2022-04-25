@@ -1,0 +1,164 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+<script>
+    $(document).ready(function() {
+        let data = {{data|tojson}};
+        let ftype =  '{{ftype|safe}}';
+        let index = parseInt('{{index|safe}}');
+        let location = window.location.href;
+        let i = 0;
+        if(data[index]['video'].length > 0) {
+            let url = data[index]['video'][0]
+            $('#myframe').attr("src", url);
+        }
+
+        if (i < (data[index]["hint"]).length){
+            id0 = data[index]["hint"][0][2];
+            $('#'+id0).hide();
+
+            $('.'+id0).click(function(){
+                $('#'+id0).slideToggle();
+            })
+            i += 1;
+        };
+        
+        if (i < (data[index]["hint"]).length){
+            id1 = data[index]["hint"][1][2];
+            $('#'+id1).hide();
+
+            $('.'+id1).click(function(){
+                $('#'+id1).slideToggle();
+            })
+        };
+
+        $('#next').click(function() {
+            /* redirect the webpage to quiz.html */
+            index += 1;
+            if(index >= data.length) {
+                index = 0;
+                if(ftype == "o"){
+                    location = "/defensive"
+                    window.location.assign(location);
+                }
+                else if(ftype == 'd'){
+                    window.location.assign("/quiz_start");
+                }
+            }
+            else {
+                location = "/learning/"+ftype+"/"+index
+                // window.location.assign("/learning/"+ftype+"/"+index);
+                window.location.assign(location);
+            }
+        })
+        $("#prev").click(function(){
+            index -= 1
+            if(index < 0) {
+                index = 0;
+                if(ftype == 'd'){
+                    location = "/defensive"
+                    window.location.assign(location);
+                }
+                else if(ftype == 'o'){
+                    location = "/offensive"
+                    window.location.assign(location);
+                }
+            }
+            else{
+                location = "/learning/"+ftype+"/"+index
+                // window.location.assign("/learning/"+ftype+"/"+index);
+                window.location.assign(location);
+            }
+        })
+        $.ajax({
+                type: "POST",
+                url: "/track_learning",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(location),
+                success: function(res){
+                    console.log('succeed')
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request)
+                    console.log(status)
+                    console.log(error)
+                }
+            });
+    });
+</script>
+
+<style>
+    .image {
+        max-width: 20vw;
+        max-height: auto;
+    }
+    #block{
+        display: block;
+        background-color: black;
+        color: white;
+        height: 40px;
+        font-size: large;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 6px;
+    }
+    .row{
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class = 'row'>
+    <div class = 'col-md-12'>
+        <h2>
+            {{data[index].name}}
+        </h2>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-9'>
+        <div class="row">
+            <p>
+                {{data[index].description}}
+            </p>
+        </div>
+        {% for each in data[index].hint %}
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <button class = '{{each[2]}}'>{{each[0]}}</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 id = '{{each[2]}}'>{{each[1]}}</h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <iframe width="650" height="500" id="myframe"></iframe>
+    </div>
+    <div class="col-md-3">
+        <div class="justify-content-center">
+            <div id="block">
+                <div>What would Referee do?</div>
+            </div>
+            <img src={{data[index].img}} class="image">
+            <br>
+            <br>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-success" id="prev">Previous</button>
+            </div>
+            <div class="col-md-8"></div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-success" id="next">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+<script>
+    $(document).ready(function(){
+        $('#back').click(function(){
+            /* redirect to the home page */
+            window.location.assign("/")
+        })
+    })
+</script>
+
+<div class = 'row'>
+    <h2>
+        Congratulations, you have completed the test.
+    </h2>
+</div>
+
+<div class = 'row'>
+    <h3>
+        Your Score is {{score}}/10.
+    </h3>
+</div>
+
+<div class = 'row'>
+    <button type="button" class="btn btn-success" id = "back">Back To Home Page</button>
+</div>
+
+{% endblock %}
