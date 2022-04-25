@@ -350,7 +350,7 @@ def check():
 @app.route("/final")
 def final():
     global score
-    return render_template("final.html",cscore = score[-1])
+    return render_template("final.html",score = score[-1])
 
 @app.route("/learning/<ftype>/<index>")
 def learningpage(ftype = None, index = None):
