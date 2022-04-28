@@ -310,9 +310,9 @@ def quiz(id = None):
     id -= 1
     data = quizzes[id]
     if 'img' in data:
-        return render_template("quiz.html", data = data)
+        return render_template("quiz.html", data = data, process = (int(data['id']))*10)
     elif 'video' in data:
-        return render_template("quiz_video.html", data = data)
+        return render_template("quiz_video.html", data = data, process = (int(data['id']))*10)
 
 @app.route("/checkAnswer", methods=["POST", "GET"])
 def check():
