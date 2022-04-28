@@ -14,24 +14,24 @@
             $('#myframe').attr("src", url);
         }
 
-        if (i < (data[index]["hint"]).length){
-            id0 = data[index]["hint"][0][2];
-            $('#'+id0).hide();
+        // if (i < (data[index]["hint"]).length){
+        //     id0 = data[index]["hint"][0][2];
+        //     $('#'+id0).hide();
 
-            $('.'+id0).click(function(){
-                $('#'+id0).slideToggle();
-            })
-            i += 1;
-        };
+        //     $('.'+id0).click(function(){
+        //         $('#'+id0).slideToggle();
+        //     })
+        //     i += 1;
+        // };
         
-        if (i < (data[index]["hint"]).length){
-            id1 = data[index]["hint"][1][2];
-            $('#'+id1).hide();
+        // if (i < (data[index]["hint"]).length){
+        //     id1 = data[index]["hint"][1][2];
+        //     $('#'+id1).hide();
 
-            $('.'+id1).click(function(){
-                $('#'+id1).slideToggle();
-            })
-        };
+        //     $('.'+id1).click(function(){
+        //         $('#'+id1).slideToggle();
+        //     })
+        // };
 
         $('#next').click(function() {
             /* redirect the webpage to quiz.html */
@@ -97,67 +97,84 @@
     }
     #block{
         display: block;
-        background-color: black;
+        background-color: rgb(239, 145, 14);
         color: white;
         height: 40px;
         font-size: large;
         text-align: center;
         font-weight: bold;
         padding-top: 6px;
+        margin-bottom: 20px;
+    }
+    .row1{
+        margin-left: -33px;
     }
     .row{
         margin-bottom: 20px;
     }
+    .row2{
+        margin-bottom: 20px; 
+    }
+    p{
+        font-size: large;
+    }
+    .btn-success{
+        background-color: rgb(239, 145, 14);
+        border: rgb(239, 145, 14);
+    }
 </style>
 
-<div class = 'row'>
+<div class ='row row1'>
     <div class = 'col-md-12'>
-        <h2>
+        <h1>
             {{data[index].name}}
-        </h2>
+        </h1>
     </div>
 </div>
 
 <div class = 'row'>
-    <div class = 'col-md-9'>
-        <div class="row">
+    <div class = 'col-md-8'>
+        <div class="row row2">
             <p>
                 {{data[index].description}}
             </p>
         </div>
         {% for each in data[index].hint %}
-        <div class="row">
+        <div class="row row2">
             <div class="row">
                 <div class="col-md-12">
-                    <button class = '{{each[2]}}'>{{each[0]}}</button>
+                    <h3>{{each[0]}}</h3>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-md-12">
-                    <h4 id = '{{each[2]}}'>{{each[1]}}</h4>
+                    <p>{{each[1]}}</p>
                 </div>
             </div>
         </div>
         {% endfor %}
-        <iframe width="650" height="500" id="myframe"></iframe>
+        <div class="row row2">
+            <h3>Learn better with the video</h3>
+            <iframe width="650" height="500" id="myframe"></iframe>
+        </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="justify-content-center">
             <div id="block">
                 <div>What would Referee do?</div>
             </div>
             <img src={{data[index].img}} class="image">
-            <br>
-            <br>
-            <div class="col-md-1">
-                <button type="button" class="btn btn-success" id="prev">Previous</button>
-            </div>
-            <div class="col-md-8"></div>
-            <div class="col-md-1">
-                <button type="button" class="btn btn-success" id="next">Next</button>
-            </div>
         </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <button type="button" class="btn btn-success" id="prev">Back</button>
+    </div>
+    <div class="col-md-8"></div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-success" id="next">Next</button>
     </div>
 </div>
 
