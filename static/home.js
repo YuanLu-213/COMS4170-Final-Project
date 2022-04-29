@@ -1,6 +1,15 @@
 $(document).ready(function(){
     var resume = tracking[tracking.length - 1]
-    $("#resume").click(function(){
-        window.location.assign(resume)
-    })
+
+    if(resume == undefined){
+        console.log("undefined");
+        $("#resume").addClass("disabled");
+        $("#resume").prop('disabled', true);
+    }
+    else{
+        $("#resume").removeClass("disabled");
+        $("#resume").click(function(){
+            window.location.assign(resume)
+        })
+    }
 });
