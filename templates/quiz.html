@@ -71,11 +71,7 @@
         });
 
         $("#dialog").dialog("open");  
-    });
-
-    
-
-    
+    });    
 </script>
 
 <style>
@@ -121,9 +117,10 @@
         width: 90%;
     }
 
-    h2{
+    h1{
         color:white;
         font-weight: bold;
+        margin-bottom: 20px;
     }
 
     .choice{
@@ -140,9 +137,12 @@
         font-size: 20px;
         background-color: orangered;
         border-radius: 10px;
-        border: dimgrey;
+        border: orangered;
         color:white;
         width:100px;
+    }
+    .submit-button:hover{
+        color:black;
     }
 
     .again{
@@ -157,10 +157,11 @@
         color:darkgray;
         width:100px;
     }
+    .again:hover{
+        color:black;
+    }
 
     #hint{
-        /* margin-left:10px;
-        margin-top:10px; */
         padding-left: 10px;
         padding-right: 10px;
         font-size: 18px;
@@ -219,9 +220,9 @@
 
 <div class = 'row'>
     <div class = 'col-md-12'>
-        <h2>
+        <h1>
             Question {{data.id}}
-        </h2>
+        </h1>
     </div>
 </div>
 
@@ -243,7 +244,7 @@
                 <img src={{data.img}} alt="question{{data.id}}'s media"> 
             </div>
            
-            <div class = 'col-md-3'>
+            <div class = 'col-md-4'>
                 <form action="/checkAnswer" method="POST">
                     {% for each in data.choice %}
                     <div class='choice'>
@@ -259,7 +260,7 @@
                 </form>     
             </div>
 
-            <div class="col-md-1"></div>
+            <!-- <div class="col-md-1"></div> -->
 
             <div class = 'col-md-2'>
                 <div class = 'row'>
