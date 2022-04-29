@@ -166,7 +166,7 @@ quizzes = [
     {
         "id":"8",
         "question":"Sometimes it is hard to judge whether it is a travelling foul, can you get it right?",
-        "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, then it results in a travelling violation. Think carefully about how to count the two steps",
+        "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after stopped dribbling or takes any step before dribbling, then it results in a travelling violation. Think carefully about the gather step.",
         "choice":["Yes, it is a travelling.","No, it isn't."],
         "video":"KZu5iE7yrPI",
         "start":"23",
@@ -176,7 +176,7 @@ quizzes = [
     {
         "id":"9",
         "question":"Did the player in 1 white make an illegal screen violation?",
-        "hint":"When a player fails to maintain a set position or doesn't allow the defender the opportunity to avoid contact while setting a screen or pick, a illegal screen will be given. Screens must be performed in a standstill manner. A step must separate the screener and defender while the screener may not move laterally or towards the defender that they are setting the screen on.",
+        "hint":"Think about whether the player has established his position and allowed the defender to avoid contact. Consider if the screener is moving laterally or towards the defender that they are setting the screen on.",
         "choice":["Yes, it is an illegal screen faul.","No, it isn't."],
         "video":"e7aErY-r414",
         "start":"71",
