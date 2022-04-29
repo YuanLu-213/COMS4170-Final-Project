@@ -343,9 +343,9 @@ def check():
                 score[-1] = currentScore
                 print(score)
             if "img" in quizzes[int(quizNumber)-1]:
-                return render_template("quiz_feedback.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer)
+                return render_template("quiz_feedback.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer,process = (int(quizNumber))*10)
             else:
-                return render_template("quiz_feedback_video.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer)
+                return render_template("quiz_feedback_video.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer,process = (int(quizNumber))*10)
 
 @app.route("/final")
 def final():
