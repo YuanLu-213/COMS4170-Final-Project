@@ -11,20 +11,69 @@
     })
 </script>
 
+<style>
+    body{
+        background-color: #1564dadf;
+    }
+    h1{
+        margin-top:50px;
+        color:white;
+        margin-left:auto;
+        margin-right:auto;
+        font-size:50px
+    }
+    .row{
+        margin-bottom:10px;
+    }
+    h2{
+        color:darkgray;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    span{
+        font-weight: bold;
+        font-size:60px;
+        color:white;
+    }
+
+    #back{
+        margin-top:50px;
+        margin-left:auto;
+        margin-right:auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 25px;
+        background-color: orangered;
+        border-radius: 10px;
+        border: orangered;
+        color:white;
+        width:250px;
+    }
+    #back:hover{
+        color:black;
+    }
+</style>
+
+
+<div class = 'row'>
+    <h1>
+        You have completed the test
+    </h1>   
+</div>
+
 <div class = 'row'>
     <h2>
-        Congratulations, you have completed the test.
+        Your Score is <span>{{score}}/10</span>
     </h2>
 </div>
 
 <div class = 'row'>
-    <h3>
-        Your Score is {{score}}/10.
-    </h3>
+    <button type="button" id = "back">Back To Home Page</button>
 </div>
 
-<div class = 'row'>
-    <button type="button" class="btn btn-success" id = "back">Back To Home Page</button>
-</div>
+<br>
+<br>
+<br>
+
 
 {% endblock %}
