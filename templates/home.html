@@ -1,31 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-    <script type="text/javascript" src="{{url_for('static', filename='js/home.js')}}"></script>
-</head>
-<body>
-    {% extends 'nav.html' %}
-    {% block content %}
-    <div class="container-fluid">
-        <div class="row row1">
-            <span id="home-intro">Welcome to Mr.Basketball. Here you can learn about all types of rules in basketball. No matter if you are a player, a fan of basketball, or a basketball rookie, this site will make you a master of basketball rules. You can also test yourself and compete with others to see who is the real Mr/Ms.Basketball.
-            </span>
-        </div>
-        <div class="row">
-            <a id="button-1" href="/offensive">
-                <button>Let's Get Started</button>
-            </a>
-        </div>
-        <div class="row">
-            <button id="resume">Resume</button>
-        </div>
-        <div class="row">
-            <a id="button-3" href="/quiz_start">
-                <button>Test Yourself</button>
-            </a>
-        </div>
-    </div>
-    {% endblock %}
-</body>
-</html>
+{% extends 'nav.html' %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+<script>
+          $(document).ready(function(){
+      var learning = {{learning | tojson}}
+      var tracking = {{tracking | tojson}}
+
+      var resume = tracking[tracking.length - 1]
+
+      if(resume == undefined){
+          console.log("undefined");
+          $("#resume").addClass("disabled");
+          $("#resume").prop('disabled', true);
+      }
+      else{
+          $("#resume").removeClass("disabled");
+          $("#resume").click(function(){
+              window.location.assign(resume)
+          })
+      }
+  });
+</script>
+
+<div class="container-fluid">
+  <div class="row row1">
+    <span id="home-intro"
+      >Welcome to Mr.Basketball. Here you can learn about all types of rules in
+      basketball. No matter if you are a player, a fan of basketball, or a
+      basketball rookie, this site will make you a master of basketball rules.
+      You can also test yourself and compete with others to see who is the real
+      Mr/Ms.Basketball.
+    </span>
+  </div>
+  <div class="row">
+    <a id="button-1" href="/offensive">
+      <button>Let's Get Started</button>
+    </a>
+  </div>
+  <div class="row">
+    <button id="resume">Resume</button>
+  </div>
+  <div class="row">
+    <a id="button-3" href="/quiz_start">
+      <button>Test Yourself</button>
+    </a>
+  </div>
+</div>
+{% endblock %}

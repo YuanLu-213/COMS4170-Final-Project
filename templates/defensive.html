@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/defensive.css') }}">
-    <script type="text/javascript" src="{{url_for('static', filename='js/defensive.js')}}"></script>
-</head>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/defensive.css') }}"
+    />
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='js/defensive.js')}}"
+    ></script>
+  </head>
 
-<body>
-    {% extends 'nav.html' %}
-    {% block content %}
+  <body>
+    {% extends 'nav.html' %} {% block content %}
     <div class="row intro">
-        <div id="quote">
-            “Defense is what matters. Scoring doesn’t interest me.” - David Robinson
-        </div>
+      <div id="quote">
+        “Defense is what matters. Scoring doesn’t interest me.” - David Robinson
+      </div>
     </div>
     <div class="row intro">
-        <div id="def-intro">The quote from former defensive player of the year and four time all-defensive first team player, David Robinson, shows us how important playing good defense is in the game of basketball. To become a defensive player like Robinson, the first thing is to understand all the defensive rules.
-        </div>
+      <div id="def-intro">
+        The quote from former defensive player of the year and four time
+        all-defensive first team player, David Robinson, shows us how important
+        playing good defense is in the game of basketball. To become a defensive
+        player like Robinson, the first thing is to understand all the defensive
+        rules.
+      </div>
     </div>
     <div class="row">
-        <div class="col-md-10"></div>
-        <div class="col-md-1">
-            <a href="/learning/d/0">
-                <button id="next" class="btn btn-success">NEXT</button>
-            </a>
-        </div>
+      <div class="col-md-10"></div>
+      <div class="col-md-1">
+        <a href="/learning/d/0">
+          <button id="next" class="btn btn-success">NEXT</button>
+        </a>
+      </div>
     </div>
     {% endblock%}
-</body>
+  </body>
 </html>

@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/final.css') }}">
-    <script type="text/javascript" src="{{url_for('static', filename='js/final.js')}}"></script>
-</head>
-<body>
-    {% extends 'nav.html' %}
-    {% block content %}
-    <div class = 'row'>
-        <h1>
-            You have completed the test
-        </h1>   
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/final.css') }}"
+    />
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='js/final.js')}}"
+    ></script>
+  </head>
+  <body>
+    {% extends 'nav.html' %} {% block content %}
+    <div class="row">
+      <h1>You have completed the test</h1>
     </div>
-    <div class = 'row'>
-        <h2>
-            Your Score is <span>{{score}}/10</span>
-        </h2>
+    <div class="row">
+      <h2>Your Score is <span>{{score}}/10</span></h2>
     </div>
-    <div class = 'row'>
-        <button type="button" id = "back">Back To Home Page</button>
+    <div class="row">
+      <button type="button" id="back">Back To Home Page</button>
     </div>
     {% endblock %}
-</body>
+  </body>
 </html>
