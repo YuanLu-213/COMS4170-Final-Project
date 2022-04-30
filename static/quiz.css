@@ -1,0 +1,128 @@
+body{
+    /* background: linear-gradient(to top, #0000ff 0%, #6699ff 79%); */
+    background-color: #1564dadf;
+}
+
+progress {
+    opacity: 0;
+}
+.progress-container {
+    position: relative;
+    display: inline-block;
+    background: white;
+    height: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    width:100%;
+}
+.progress-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: orangered;
+    width: {{process}}%;
+}
+
+
+.card-body{
+    padding-top:40px;
+    padding-left:40px;
+    padding-bottom:40px;
+}
+.card-header{
+    padding-left:40px;
+    background-color: rgb(225, 223, 223); /*lightgray*/
+}
+
+img{
+    width: 90%;
+}
+
+h1{
+    color:white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.choice{
+    font-size:20px;
+    padding-left:10px;
+    margin-bottom:20px;
+}
+
+.submit-button{
+    margin-left:10px;
+    margin-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    background-color: orangered;
+    border-radius: 10px;
+    border: orangered;
+    color:white;
+    width:100px;
+}
+.submit-button:hover{
+    color:black;
+}
+
+.again{
+    margin-left:10px;
+    margin-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    background-color: rgb(225, 223, 223);/*lightgray*/;
+    border-radius: 10px;
+    border: dimgrey;
+    color:darkgray;
+    width:100px;
+}
+.again:hover{
+    color:black;
+}
+
+#hint{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    margin-left:-12px;
+    background-color:  rgb(225, 223, 223);/*lightgray*/
+    border-radius: 10px;
+    border: dimgrey;
+    color:darkgray;
+    width:120px;
+}
+#hint:hover {
+    background: rgb(116, 112, 112);/*drakgray-er*/
+    color:white;
+    border-radius:5px;
+}
+
+#hint:hover::before{
+    display: block;
+    background: rgb(225, 223, 223);/*lightgray*/
+    color:rgb(116, 112, 112);/*drakgray*/
+    font-size:15px;
+    position: absolute;
+    top: 100%;
+    left: -7px;
+    right: -7px;
+    padding: 10px; 
+}
+
+#hint:hover::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 8px transparent;
+    border-bottom-color: rgb(225, 223, 223);/*lightgray*/
+    bottom: -3px;
+    left: 50%;
+    margin-left: -35px;
+    z-index: 1;
+}
