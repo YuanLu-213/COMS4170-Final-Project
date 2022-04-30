@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    var learning = {{learning | tojson}}
+    var tracking = {{tracking | tojson}}
+    
     var resume = tracking[tracking.length - 1]
 
     if(resume == undefined){

@@ -1,50 +1,12 @@
-{% extends 'nav.html' %}
-
-{% block content %}
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
     <script type="text/javascript" src="{{url_for('static', filename='home.js')}}"></script>
-    <script>
-        var learning = {{learning | tojson}}
-        var tracking = {{tracking | tojson}}
-    </script>
-    <style>
-        .row1{
-            margin-top: 50px;
-            margin-bottom: 30px;
-        }
-        #home-intro{
-            text-align: center;
-            font-size: xx-large;
-            color: black;
-            margin-bottom: 30px
-        }
-        button{
-            background-color: orangered;
-            color: white;
-            font-size: 25px;
-            border-radius: 10px;
-            border: 0ch;
-        }
-        #button-1{
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-        }
-        #resume{
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-        }
-        #button-3{
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .disabled{
-            background-color: darkgray;
-        }
-    </style>
+</head>
+<body>
+    {% extends 'nav.html' %}
+    {% block content %}
     <div class="container-fluid">
         <div class="row row1">
             <span id="home-intro">Welcome to Mr.Basketball. Here you can learn about all types of rules in basketball. No matter if you are a player, a fan of basketball, or a basketball rookie, this site will make you a master of basketball rules. You can also test yourself and compete with others to see who is the real Mr/Ms.Basketball.
@@ -64,4 +26,6 @@
             </a>
         </div>
     </div>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>
