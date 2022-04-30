@@ -1,0 +1,17 @@
+.intro{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+#off-intro{
+    font-size: xx-large;
+}
+button{
+    background-color: black;
+    color: white;
+}
+#next{
+    background-color: orangered;
+    border: 0ch;
+}
