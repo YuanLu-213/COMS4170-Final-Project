@@ -1,0 +1,24 @@
+.intro{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+#quote{
+    font-style: italic;
+    font-size: xx-large;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#def-intro{
+    font-size: xx-large;
+}
+button{
+    background-color: black;
+    color: white;
+}
+#next{
+    background-color: orangered;
+    border: 0ch;
+}

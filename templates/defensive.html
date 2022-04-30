@@ -1,66 +1,30 @@
-{% extends 'nav.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='defensive.css') }}">
+    <script type="text/javascript" src="{{url_for('static', filename='defensive.js')}}"></script>
+</head>
 
-{% block content %}
-<script type="text/javascript" src="{{url_for('static', filename='defensive.js')}}"></script>
-<style>
-    .intro{
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-    }
-    #quote{
-        font-style: italic;
-        font-size: xx-large;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #def-intro{
-        font-size: xx-large;
-    }
-    button{
-        background-color: black;
-        color: white;
-    }
-    #next{
-        background-color: orangered;
-        border: 0ch;
-    }
-</style>
-<div class="row intro">
-    <div id="quote">
-        “Defense is what matters. Scoring doesn’t interest me.” - David Robinson
+<body>
+    {% extends 'nav.html' %}
+    {% block content %}
+    <div class="row intro">
+        <div id="quote">
+            “Defense is what matters. Scoring doesn’t interest me.” - David Robinson
+        </div>
     </div>
-</div>
-<div class="row intro">
-    <div id="def-intro">The quote from former defensive player of the year and four time all-defensive first team player, David Robinson, shows us how important playing good defense is in the game of basketball. To become a defensive player like Robinson, the first thing is to understand all the defensive rules.
+    <div class="row intro">
+        <div id="def-intro">The quote from former defensive player of the year and four time all-defensive first team player, David Robinson, shows us how important playing good defense is in the game of basketball. To become a defensive player like Robinson, the first thing is to understand all the defensive rules.
+        </div>
     </div>
-</div>
-<!-- <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-3">
-        <a href="/learning/d/0">
-            <button>Blocking</button>
-        </a>
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-1">
+            <a href="/learning/d/0">
+                <button id="next" class="btn btn-success">NEXT</button>
+            </a>
+        </div>
     </div>
-    <div class="col-md-3">
-        <a href="/learning/d/1">
-            <button>Illegal Use of Hands</button>
-        </a>
-    </div>
-    <div class="col-md-3">
-        <a href="/learning/d/2">
-            <button>Hand Check</button>
-        </a>
-    </div>
-</div> -->
-<div class="row">
-    <div class="col-md-10"></div>
-    <div class="col-md-1">
-        <a href="/learning/d/0">
-            <button id="next" class="btn btn-success">NEXT</button>
-        </a>
-    </div>
-</div>
-{% endblock%}
+    {% endblock%}
+</body>
+</html>
