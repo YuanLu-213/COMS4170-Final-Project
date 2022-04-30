@@ -14,7 +14,9 @@ learning = [
         'name': 'Blocking Foul',
         'description': 'When a defender makes contact with an offensive player without establishing position, without giving proper space or is in the charge circle, a blocking foul will be given.',
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Blocking.jpg',
+        'acc': 'Ref showing blocking foul signal',
         'video': ['https://www.youtube.com/embed/WPBdbYR5Bnk?start=133&end=340&controls=0'],
+        'vacc': 'Video of a blocking foul',
         'hint': [['Establish position', 'A defensive player with both feet standing on the ground and torso square facing the opponent is said to have established position.',"0"]],
         'type': 'd'
     },
@@ -26,10 +28,12 @@ learning = [
                     'When defender slaps or hits the arm of offensive player, especially when shooting',
             ],
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/IllegalHandUse_ReachingIn.jpg',
+        'acc': 'Ref showing illegal use of hands foul signal',
         'video': [
             "https://www.youtube.com/embed/01NsieAjzdU?start=118&end=158&controls=0",
             'https://www.youtube.com/embed/ERzhKUakC6M?end=20&controls=0'
         ],
+        'vacc': 'Video of a illegal use of hands',
         'hint':[],
         'type': 'd'
     },
@@ -38,9 +42,11 @@ learning = [
         'name': 'Hand Check',
         'description': "When a player continually uses their hands on an opposing player. This foul is typically called on defenders at the perimeter to keep a safe distance between the ball handler and the basket.",
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/HandCheck1.jpg',
+        'acc': 'Ref showing hand check foul signal',
         'video': [
             "https://www.youtube.com/embed/01NsieAjzdU?start=117&end=229&controls=0"
         ],
+        'vacc': 'Video of hand check',
         'hint':[],
         'type': 'd'
     },
@@ -49,7 +55,9 @@ learning = [
         'name': 'Travelling',
         'description': "When an offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling, a travelling violation will be called.",
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Traveling.jpg',
+        'acc': 'Ref showing travelling foul signal',
         'video': ["https://www.youtube.com/embed/J5xGKioMsIo?start=128&end=155&controls=0"],
+        'vacc': 'Video of travelling',
         'hint': [
             ['Pivot Foot', "When a player lands with one foot when performs a jump shot, the landing foot is the pivot foot, and when a players lands with both feet, either can be pivot foot.","0"],
             ['Two Steps', "The two steps starts counting when the player stops dribbling and gaining full control of the basketball. So while moving and having one foot on the floor while catching the ball or ending a dribble the next foot or feet to touch the floor is step one and will become the pivot foot. The catching step is step 0.","1"]
@@ -76,11 +84,13 @@ learning = [
                     "Sticking out the leg to prevent the player."
                 ],
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Moving_PickScreen.jpg',
+        'acc': 'Ref showing illegal screen foul signal',
         'video': [
             "https://www.youtube.com/embed/H8bbQZCHSF8?start=255&end=305&controls=0",
             "https://www.youtube.com/embed/H8bbQZCHSF8?start=370&end=394&controls=0",
             "https://www.youtube.com/embed/H8bbQZCHSF8?start=419&end=441&controls=0"
         ],
+        'vacc': 'Video of an illegal screen',
         'hint':[],
         'type': 'o'
     },
@@ -89,9 +99,11 @@ learning = [
         'name': 'Charging',
         'description': "When an offensive player makes contact with a defender or moving into a defender’s torso who has established position in front of an offensive player with or without the basketball and is not moving. Some courts, especially those used for youth basketball, make this call easier to identify by having a “charge circle” marked below the basket. If a defender is outside the circle with their feet planted, it is a charge.",
         'img': 'https://dsgmedia.blob.core.windows.net/pub/2017/12/Charging_Pushing.jpg',
+        'acc': 'Ref showing charging foul signal',
         'video': [
             "https://www.youtube.com/embed/WnNT0Sy226w?start=129&end=153&controls=0"
         ],
+        'vacc': 'Video of charging foul',
         'hint':[],
         'type': 'o'
     },
@@ -103,8 +115,8 @@ quizzes = [
         "question":"What rule or violation is violated in the following GIF based on the hand signal of referee?",
         "hint":"Think about if offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling.",
         "choice":["Illegal Screen","Blocking","Charging","Travelling"],
-        "img":"https://c.tenor.com/uYWM4E5tzEcAAAAC/referee-travel.gif"
-    
+        "img":"https://c.tenor.com/uYWM4E5tzEcAAAAC/referee-travel.gif",
+        'acc': 'Image of a foul'
     },
     {
         "id":"2",
@@ -112,6 +124,7 @@ quizzes = [
         "hint":"Look carefully to see whether the player in dark jersey is in an established guarding position. Whether he is there before the player in white.",
         "choice":["Blocking","Illegal Screen","Charging","Hand Check"],
         "video":"zfpBxKjYLT8",
+        'acc': 'Video of a foul',
         "start":"83",
         "stop":"110",
         "mute":"yes"
@@ -122,6 +135,7 @@ quizzes = [
         "hint":"Does the defender establish the position?",
         "choice":["Charging","Blocking","Illegal Use of Hands","Illegal Screen"],
         "video":"UJbBUi7SgtM",
+        'acc': 'Video of a foul',
         "start":"63",
         "stop":"66",
         "mute":"yes"
@@ -131,7 +145,8 @@ quizzes = [
         "question":"What rule or violation is violated in the following image based on the hand signal of referee?",
         "hint":"Maybe to focus on the hand.",
         "choice":["Illegal Use of Hands","Hand Check","Travelling","Blocking"],
-        "img":"https://dsgmedia.blob.core.windows.net/pub/2017/12/HandCheck1.jpg"
+        "img":"https://dsgmedia.blob.core.windows.net/pub/2017/12/HandCheck1.jpg",
+        'acc': 'Image of a foul'
     },
     {
         "id":"5",
@@ -139,6 +154,7 @@ quizzes = [
         "hint":"Look carefully on whether he had a contact with the other player.",
         "choice":["No, he did not violate any rules.","Yes, he made a charging foul.","Yes, he made a illegal screen foul.","Yes, he made a travelling violation."],
         "video":"H8bbQZCHSF8",
+        'acc': 'Video of a foul',
         "start":"90",
         "stop":"101",
         "mute":"yes"
@@ -149,6 +165,7 @@ quizzes = [
         "hint":"Look carefully on whether he had a contact with the other player.",
         "choice":["Hand Check","Charging","Illegal Screen","Illegal Use of Hand"],
         "video":"aZarLAPyj-c",
+        'acc': 'Video of a foul',
         "start":"198",
         "stop":"205",
         "mute":"yes"
@@ -159,6 +176,7 @@ quizzes = [
         "hint":"Look carefully on whether the defender had establish a legal position.",
         "choice":["Blocking","Charging"],
         "video":"8Oj5R6kzFfY",
+        'acc': 'Video of a foul',
         "start":"33",
         "stop":"49",
         "mute":"yes"
@@ -169,6 +187,7 @@ quizzes = [
         "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after stopped dribbling or takes any step before dribbling, then it results in a travelling violation. Think carefully about the gather step.",
         "choice":["Yes, it is a travelling.","No, it isn't."],
         "video":"KZu5iE7yrPI",
+        'acc': 'Video of a foul',
         "start":"23",
         "stop":"32",
         "mute":"yes"
@@ -179,6 +198,7 @@ quizzes = [
         "hint":"Think about whether the player has established his position and allowed the defender to avoid contact. Consider if the screener is moving laterally or towards the defender that they are setting the screen on.",
         "choice":["Yes, it is an illegal screen faul.","No, it isn't."],
         "video":"e7aErY-r414",
+        'acc': 'Video of a foul',
         "start":"71",
         "stop":"76",
         "mute":"yes"
@@ -188,7 +208,8 @@ quizzes = [
         "question":"What rule or violation is violated in the following GIF?",
         "hint":"First make sure which player break the rule, offensive or defensive player?",
         "choice":["Blocking","Illegal Use of Hand","Hand Check","Charging"],
-        "img":"http://fc02.deviantart.net/fs71/f/2010/263/0/5/kbwadeshot_by_immortal24-d2z4szz.gif"
+        "img":"http://fc02.deviantart.net/fs71/f/2010/263/0/5/kbwadeshot_by_immortal24-d2z4szz.gif",
+        'acc': 'Image of a foul'
     }
 ]
 

@@ -156,7 +156,7 @@
         {% endfor %}
         <div class="row row2">
             <h3>Learn better with the video</h3>
-            <iframe width="650" height="500" id="myframe"></iframe>
+            <iframe width="650" height="500" id="myframe" alt="{{data[index].vacc}}"></iframe>
         </div>
     </div>
     <div class="col-md-4">
@@ -164,7 +164,7 @@
             <div id="block">
                 <div>What would Referee do?</div>
             </div>
-            <img src={{data[index].img}} class="image">
+            <img src={{data[index].img}} alt='{{data[index].acc}}' class="image">
         </div>
     </div>
 </div>
