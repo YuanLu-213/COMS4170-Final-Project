@@ -1,79 +1,25 @@
-{% extends 'nav.html' %}
-
-{% block content %}
-
-<script>
-    $(document).ready(function(){
-        $('#back').click(function(){
-            /* redirect to the home page */
-            window.location.assign("/")
-        })
-    })
-</script>
-
-<style>
-    body{
-        background-color: #1564dadf;
-    }
-    h1{
-        margin-top:50px;
-        color:white;
-        margin-left:auto;
-        margin-right:auto;
-        font-size:50px
-    }
-    .row{
-        margin-bottom:10px;
-    }
-    h2{
-        color:darkgray;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    span{
-        font-weight: bold;
-        font-size:60px;
-        color:white;
-    }
-
-    #back{
-        margin-top:50px;
-        margin-left:auto;
-        margin-right:auto;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 25px;
-        background-color: orangered;
-        border-radius: 10px;
-        border: orangered;
-        color:white;
-        width:250px;
-    }
-    #back:hover{
-        color:black;
-    }
-</style>
-
-
-<div class = 'row'>
-    <h1>
-        You have completed the test
-    </h1>   
-</div>
-
-<div class = 'row'>
-    <h2>
-        Your Score is <span>{{score}}/10</span>
-    </h2>
-</div>
-
-<div class = 'row'>
-    <button type="button" id = "back">Back To Home Page</button>
-</div>
-
-<br>
-<br>
-<br>
-
-
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='final.css') }}">
+    <script type="text/javascript" src="{{url_for('static', filename='final.js')}}"></script>
+</head>
+<body>
+    {% extends 'nav.html' %}
+    {% block content %}
+    <div class = 'row'>
+        <h1>
+            You have completed the test
+        </h1>   
+    </div>
+    <div class = 'row'>
+        <h2>
+            Your Score is <span>{{score}}/10</span>
+        </h2>
+    </div>
+    <div class = 'row'>
+        <button type="button" id = "back">Back To Home Page</button>
+    </div>
+    {% endblock %}
+</body>
+</html>
