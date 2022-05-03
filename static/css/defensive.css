@@ -10,9 +10,11 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 #def-intro {
   font-size: xx-large;
+  color: white;
 }
 button {
   background-color: black;
@@ -21,4 +23,5 @@ button {
 #next {
   background-color: orangered;
   border: 0ch;
+  font-size: x-large;
 }
