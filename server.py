@@ -115,7 +115,7 @@ quizzes = [
         "id":"1",
         "question":"What rule or violation is violated in the following GIF based on the hand signal of referee?",
         "hint":"Think about if offensive player takes more than two steps with the ball or moves their pivot foot after the player has stopped dribbling or takes any step before dribbling.",
-        "choice":["Illegal Screen","Blocking","Charging","Travelling"],
+        "choice":[{"option":"A","selection":"Illegal Screen"},{"option":"B","selection":"Blocking"},{"option":"C","selection":"Charging"},{"option":"D","selection":"Travelling"}],
         "img":"https://c.tenor.com/uYWM4E5tzEcAAAAC/referee-travel.gif",
         'acc': 'Image of a foul'
     },
@@ -123,7 +123,7 @@ quizzes = [
         "id":"2",
         "question":"What is the foul or violation in the following play?",
         "hint":"Look carefully to see whether the player in dark jersey is in an established guarding position. Whether he is there before the player in white.",
-        "choice":["Blocking","Illegal Screen","Charging","Hand Check"],
+        "choice":[{"option":"A","selection":"Blocking"},{"option":"B","selection":"Illegal Screen"},{"option":"C","selection":"Charging"},{"option":"D","selection":"Hand Check"}],
         "video":"zfpBxKjYLT8",
         'acc': 'Video of a foul',
         "start":"83",
@@ -134,7 +134,7 @@ quizzes = [
         "id":"3",
         "question":"What is the foul or violation in the following play?",
         "hint":"Does the defender establish the position?",
-        "choice":["Charging","Blocking","Illegal Use of Hands","Illegal Screen"],
+        "choice":[{"option":"A","selection":"Charging"},{"option":"B","selection":"Blocking"},{"option":"C","selection":"Illegal Use of Hands"},{"option":"D","selection":"Illegal Screen"}],
         "video":"UJbBUi7SgtM",
         'acc': 'Video of a foul',
         "start":"63",
@@ -145,7 +145,7 @@ quizzes = [
         "id":"4",
         "question":"What rule or violation is violated in the following image based on the hand signal of referee?",
         "hint":"Maybe to focus on the hand.",
-        "choice":["Illegal Use of Hands","Hand Check","Travelling","Blocking"],
+        "choice":[{"option":"A","selection":"Illegal Use of Hands"},{"option":"B","selection":"Hand Check"},{"option":"C","selection":"Travelling"},{"option":"D","selection":"Blocking"}],
         "img":"https://dsgmedia.blob.core.windows.net/pub/2017/12/HandCheck1.jpg",
         'acc': 'Image of a foul'
     },
@@ -153,7 +153,7 @@ quizzes = [
         "id":"5",
         "question":"Did the player in 21 white violate any rule? If he did, what rule did he break?",
         "hint":"Look carefully on whether he had a contact with the other player.",
-        "choice":["No, he did not violate any rules.","Yes, he made a charging foul.","Yes, he made a illegal screen foul.","Yes, he made a travelling violation."],
+        "choice":[{"option":"A","selection":"No, he did not violate any rules."},{"option":"B","selection":"Yes, he made a charging foul."},{"option":"C","selection":"Yes, he made a illegal screen foul."},{"option":"D","selection":"Yes, he made a travelling violation."}],
         "video":"H8bbQZCHSF8",
         'acc': 'Video of a foul',
         "start":"90",
@@ -164,7 +164,7 @@ quizzes = [
         "id":"6",
         "question":"What is the foul or violation in the following play?",
         "hint":"Look carefully on whether he had a contact with the other player.",
-        "choice":["Hand Check","Charging","Illegal Screen","Illegal Use of Hand"],
+        "choice":[{"option":"A","selection":"Hand Check"},{"option":"B","selection":"Charging"},{"option":"C","selection":"Illegal Screen"},{"option":"D","selection":"Illegal Use of Hand"}],
         "video":"aZarLAPyj-c",
         'acc': 'Video of a foul',
         "start":"198",
@@ -175,7 +175,7 @@ quizzes = [
         "id":"7",
         "question":"To distinguish between charging and blocking is difficult, can you get it right?",
         "hint":"Look carefully on whether the defender had establish a legal position.",
-        "choice":["Blocking","Charging"],
+        "choice":[{"option":"A","selection":"Blocking"},{"option":"B","selection":"Charging"}],
         "video":"8Oj5R6kzFfY",
         'acc': 'Video of a foul',
         "start":"33",
@@ -186,7 +186,7 @@ quizzes = [
         "id":"8",
         "question":"Sometimes it is hard to judge whether it is a travelling foul, can you get it right?",
         "hint":"If an offensive player takes more than two steps with the ball or moves their pivot foot after stopped dribbling or takes any step before dribbling, then it results in a travelling violation. Think carefully about the gather step.",
-        "choice":["Yes, it is a travelling.","No, it isn't."],
+        "choice":[{"option":"A","selection":"Yes, it is a travelling."},{"option":"B","selection":"No, it isn't."}],
         "video":"KZu5iE7yrPI",
         'acc': 'Video of a foul',
         "start":"23",
@@ -197,7 +197,7 @@ quizzes = [
         "id":"9",
         "question":"Did the player in 1 white make an illegal screen violation?",
         "hint":"Think about whether the player has established his position and allowed the defender to avoid contact. Consider if the screener is moving laterally or towards the defender that they are setting the screen on.",
-        "choice":["Yes, it is an illegal screen faul.","No, it isn't."],
+        "choice":[{"option":"A","selection":"Yes, it is an illegal screen faul."},{"option":"B","selection":"No, it isn't."}],
         "video":"e7aErY-r414",
         'acc': 'Video of a foul',
         "start":"71",
@@ -208,7 +208,7 @@ quizzes = [
         "id":"10",
         "question":"What rule or violation is violated in the following GIF?",
         "hint":"First make sure which player break the rule, offensive or defensive player?",
-        "choice":["Blocking","Illegal Use of Hand","Hand Check","Charging"],
+        "choice":[{"option":"A","selection":"Blocking"},{"option":"B","selection":"Illegal Use of Hand"},{"option":"C","selection":"Hand Check"},{"option":"D","selection":"Charging"}],
         "img":"http://fc02.deviantart.net/fs71/f/2010/263/0/5/kbwadeshot_by_immortal24-d2z4szz.gif",
         'acc': 'Image of a foul'
     }
@@ -270,45 +270,59 @@ UserChoiceOnQuiz = [
 AnswerForQuiz = [
     {
         "id":"1",
-        "answer":"Travelling"
+        "answer":"Travelling",
+        "choice": "D"
     },
     {
         "id":"2",
-        "answer":"Charging"
+        "answer":"Charging",
+        "choice":"C"
     },
     {
         "id":"3",
-        "answer":"Charging"
+        "answer":"Charging",
+        "choice":"A"
     },
     {
         "id":"4",
-        "answer":"Hand Check"
+        "answer":"Hand Check",
+        "choice" : "B"
     },
     {
         "id":"5",
-        "answer":"Yes, he made a illegal screen foul."
+        "answer":"Yes, he made a illegal screen foul.",
+        "choice" : "C"
     },
     {
         "id":"6",
-        "answer":"Illegal Use of Hand"
+        "answer":"Illegal Use of Hand",
+        "choice" : "D"
     },
     {
         "id":"7",
-        "answer":"Charging"
+        "answer":"Charging",
+        "choice" : "B"
     },
     {
         "id":"8",
-        "answer":"No, it isn't."
+        "answer":"No, it isn't.",
+        "choice" : "B"
     },
     {
         "id":"9",
-        "answer":"Yes, it is an illegal screen faul."
+        "answer":"Yes, it is an illegal screen faul.",
+        "choice":"A"
     },
     {
         "id":"10",
-        "answer":"Hand Check"
+        "answer":"Hand Check",
+        "choice" : "C"
     }
 ]
+
+Answers = ['D','C','A','B','C','D','B','B','A','C']
+
+userchoice = []
 
 tracking = []
 
@@ -332,9 +346,9 @@ def quiz(id = None):
     id -= 1
     data = quizzes[id]
     if 'img' in data:
-        return render_template("quiz.html", data = data, process = (int(data['id']))*10)
+        return render_template("quiz.html", data = data, process = (int(data['id']))*10, userChoice = userchoice, correctChoice = Answers)
     elif 'video' in data:
-        return render_template("quiz_video.html", data = data, process = (int(data['id']))*10)
+        return render_template("quiz_video.html", data = data, process = (int(data['id']))*10, userChoice = userchoice, correctChoice = Answers)
 
 @app.route("/checkAnswer", methods=["POST", "GET"])
 def check():
@@ -343,6 +357,7 @@ def check():
     global AnswerForQuiz
     
     print(score)
+    print(request.form)
     currentScore = score[-1]
 
     if "POST" == request.method:
@@ -355,9 +370,20 @@ def check():
             #store user's state to UserChoiceOnQuiz
             UserChoiceOnQuiz[int(quizNumber)-1]['answer'] = UserAnswer
             UserChoiceOnQuiz[int(quizNumber)-1]['submitTime'] = timestring
+            
 
             #compare to the correct answer
             correcrAnswer = AnswerForQuiz[int(quizNumber)-1]['answer']
+            correctChoice = AnswerForQuiz[int(quizNumber)-1]['choice']
+            
+            print("correctChoice:",correctChoice)
+
+            allchoices = quizzes[int(quizNumber)-1]
+            for item in allchoices['choice']:
+                if item['selection'] == UserAnswer:
+                    userChoice = item['option']
+                    userchoice.append(userChoice)
+            print("userChoice:",  userchoice)
 
             #if correct
             if UserAnswer == correcrAnswer:
@@ -365,14 +391,14 @@ def check():
                 score[-1] = currentScore
                 print(score)
             if "img" in quizzes[int(quizNumber)-1]:
-                return render_template("quiz_feedback.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer,process = (int(quizNumber))*10)
+                return render_template("quiz_feedback.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer,process = (int(quizNumber))*10, userChoice = userchoice, correctChoice = Answers)
             else:
-                return render_template("quiz_feedback_video.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer,process = (int(quizNumber))*10)
+                return render_template("quiz_feedback_video.html", data = quizzes[int(quizNumber)-1], cscore = score[-1], UserAnswer = UserAnswer, correcrAnswer = correcrAnswer,process = (int(quizNumber))*10, userChoice = userchoice, correctChoice = Answers)
 
 @app.route("/final")
 def final():
     global score
-    return render_template("final.html",score = score[-1])
+    return render_template("final.html",score = score[-1],userChoice = userchoice, correctChoice = Answers)
 
 @app.route("/learning/<ftype>/<index>")
 def learningpage(ftype = None, index = None):
