@@ -335,6 +335,7 @@ def home_page():
 
 @app.route("/quiz_start")
 def quiz_start():
+    userchoice.clear()
     score.append(0)
     print(score)
     return render_template('quiz_start.html')
