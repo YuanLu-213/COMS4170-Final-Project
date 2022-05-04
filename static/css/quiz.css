@@ -3,29 +3,6 @@ body{
     background-color: #1564dadf;
 }
 
-progress {
-    opacity: 0;
-}
-.progress-container {
-    position: relative;
-    display: inline-block;
-    background: white;
-    height: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    width:100%;
-}
-.progress-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: orangered;
-    width: {{process}}%;
-}
-
-
 .card-body{
     padding-top:40px;
     padding-left:40px;
@@ -74,14 +51,38 @@ h1{
     padding-left: 10px;
     padding-right: 10px;
     font-size: 16px;
-    background-color: rgb(225, 223, 223);/*lightgray*/;
+    background-color: darkgray;
     border-radius: 10px;
     border: dimgrey;
-    color:darkgray;
+    color:black;
     width:100px;
 }
 .again:hover{
-    color:black;
+    color:white;
+}
+
+.feedback{
+    list-style: none;
+    border: 1px solid rgba(212, 207, 207, 0.465);
+    background-color: rgba(212, 207, 207, 0.173);
+    font-size: 20px;
+    color: rgb(96, 96, 96);
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    text-align: center;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+  
+ul{
+    display:flex;
+    padding-top:20px;
+    margin-left:190px;
+}
+
+#question{
+    display:flex;
 }
 
 #hint{
@@ -89,10 +90,10 @@ h1{
     padding-right: 10px;
     font-size: 18px;
     margin-left:-12px;
-    background-color:  rgb(225, 223, 223);/*lightgray*/
+    background-color: darkgray; 
     border-radius: 10px;
     border: dimgrey;
-    color:darkgray;
+    color:black;
     width:120px;
 }
 #hint:hover {
