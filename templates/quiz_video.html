@@ -1,0 +1,434 @@
+{% extends 'nav.html' %} {% block content %}
+
+<script>
+  let correctChoice = {{correctChoice|tojson}};
+  let userChoice = {{userChoice|tojson}};
+  $(document).ready(function () {
+    // $('h4').hide();
+
+    // $('#hint').click(function(){
+    //     $("h4").slideToggle();
+    // })
+
+    $.each(userChoice,function(index,value){
+        console.log(value);
+        console.log(index);
+        console.log(correctChoice[index]);
+        // let correctchoice = correctChoice[index];
+        let newindex = parseInt(index)+1;
+        let newindexs = newindex.toString();
+        console.log(newindexs);
+        if (value == correctChoice[index]){
+          $('#q' + newindexs).css({"background-color":"rgba(0, 239, 0, 0.49)","border-color":"rgba(0, 239, 0, 0.49)","color":"white"});
+        }
+        else{
+          $('#q' + newindexs).css({"background-color":"rgb(244 67 54 / 48%)","border-color":"rgb(244 67 54 / 48%)","color":"white"});
+        }
+      })
+
+    $("#dialog").dialog({
+      autoOpen: false,
+      modal: true,
+    });
+
+    $("#dialog-check").dialog({
+      autoOpen: false,
+      modal: true,
+    });
+
+    $("form").submit(function (event) {
+      if ($("input[name=radAnswer]:checked").length > 0) {
+        return;
+      }
+
+      $("#dialog-check").dialog({
+        buttons: {
+          Confirm: function () {
+            $(this).dialog("close");
+          },
+        },
+      });
+
+      $("#dialog-check").dialog("open");
+      event.preventDefault();
+    });
+
+    $(".again").click(function (e) {
+      var targetUrl = "/quiz_start";
+      e.preventDefault();
+      $("#dialog").dialog({
+        buttons: {
+          Confirm: function () {
+            window.location.href = targetUrl;
+          },
+          Cancel: function () {
+            $(this).dialog("close");
+          },
+        },
+      });
+
+      $("#dialog").dialog("open");
+    });
+  });
+
+  $("#confirm").click(function (e) {
+    e.preventDefault();
+    var targetUrl = $(this).attr("href");
+
+    $("#dialog").dialog({
+      buttons: {
+        Confirm: function () {
+          window.location.href = targetUrl;
+        },
+        Cancel: function () {
+          $(this).dialog("close");
+        },
+      },
+    });
+
+    $("#dialog").dialog("open");
+  });
+</script>
+
+<style>
+  body{
+      /* background: linear-gradient(to top, #0000ff 0%, #6699ff 79%); */
+      background-color: #1564dadf;
+  }
+
+  .feedback{
+    list-style: none;
+    border: 1px solid rgba(212, 207, 207, 0.465);
+    background-color: rgba(212, 207, 207, 0.173);
+    font-size: 20px;
+    color: rgb(96, 96, 96);
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    text-align: center;
+    padding-top:8px;
+    padding-bottom:8px;
+  }
+  
+  ul{
+      display:flex;
+      padding-top:20px;
+      margin-left:190px;
+  }
+
+  #question{
+      display:flex;
+  }
+
+  progress {
+      opacity: 0;
+  }
+  .progress-container {
+      position: relative;
+      display: inline-block;
+      background: white;
+      height: 20px;
+      border-radius: 6px;
+      overflow: hidden;
+      width:100%;
+  }
+  .progress-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: orangered;
+      width: {{process}}%;
+  }
+
+
+  .card-body{
+      padding-top:40px;
+      padding-left:40px;
+      padding-bottom:40px;
+  }
+  .card-header{
+      padding-left:40px;
+      background-color: rgb(225, 223, 223); /*lightgray*/
+  }
+
+  img{
+      width: 90%;
+  }
+
+  h1{
+      color:white;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-left:15px;
+  }
+
+  .col-md-4{
+      padding-left:0;
+  }
+  .choice{
+      font-size:20px;
+      padding-left:10px;
+      margin-bottom:20px;
+  }
+
+  .submit-button{
+      margin-left:10px;
+      margin-top:50px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 20px;
+      background-color: orangered;
+      border-radius: 10px;
+      border: orangered;
+      color:white;
+      width:100px;
+  }
+  .submit-button:hover{
+      color:black;
+  }
+
+  .again{
+      margin-left:10px;
+      margin-top:10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 16px;
+      background-color: darkgray;
+      border-radius: 10px;
+      border: dimgrey;
+      color:black;
+      width:100px;
+  }
+  .again:hover{
+      color:white;
+  }
+
+  #hint{
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 18px;
+      margin-left:-12px;
+      background-color:  darkgray;
+      border-radius: 10px;
+      border: dimgrey;
+      color:black;
+      width:120px;
+  }
+  #hint:hover {
+      background: rgb(116, 112, 112);/*drakgray-er*/
+      color:white;
+      border-radius:5px;
+  }
+
+  #hint:hover::before{
+      display: block;
+      background: rgb(225, 223, 223);/*lightgray*/
+      color:rgb(116, 112, 112);/*drakgray*/
+      font-size:15px;
+      position: absolute;
+      top: 100%;
+      left: -7px;
+      right: -7px;
+      padding: 10px;
+  }
+
+  #hint:hover::after{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 8px transparent;
+      border-bottom-color: rgb(225, 223, 223);/*lightgray*/
+      bottom: -3px;
+      left: 50%;
+      margin-left: -35px;
+      z-index: 1;
+  }
+</style>
+
+<div id="dialog" title="Confirmation Required">
+  Leaving the page will automatically zero out the score. Are you sure about
+  this?
+</div>
+
+<div id="dialog-check" title="Confirmation Required">
+  You need to select one answer to submit the quiz.
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h1>Question {{data.id}}</h1>
+  </div>
+  <div class = 'col-md-8' id = 'question'>
+    <ul>
+      <li class = 'feedback' id = 'q1'>
+        1
+      </li>
+      <li class = 'feedback' id = 'q2'>
+        2
+      </li>
+      <li class = 'feedback' id = 'q3'>
+        3
+      </li>
+      <li class = 'feedback' id = 'q4'>
+        4
+      </li>
+      <li class = 'feedback' id = 'q5'>
+        5
+      </li>
+      <li class = 'feedback' id = 'q6'>
+        6
+      </li>
+      <li class = 'feedback' id = 'q7'>
+        7
+      </li>
+      <li class = 'feedback' id = 'q8'>
+        8
+      </li>
+      <li class = 'feedback' id = 'q9'>
+        9
+      </li>
+      <li class = 'feedback' id = 'q10'>
+        10
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>{{data.question}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <!---<iframe src={{data.video}} title="Question{{data.id}}'s media" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+        <div id="myvideo"></div>
+        <!--
+                <div class="wrapper">
+                    <div class="frame-container">
+                    <iframe src="https://www.youtube.com/embed/01NsieAjzdU?start=118&end=158" frameborder="0"></iframe>
+                    </div>
+                </div>
+                -->
+      </div>
+
+      <div class="col-md-4">
+        <form action="/checkAnswer" method="POST">
+          {% for each in data.choice %}
+          <div class="choice">
+            <input type="radio" name="radAnswer" value="{{each.selection}}" />
+            <span>{{each.selection}}</span>
+            <br />
+          </div>
+          {% endfor %}
+          <button
+            type="submit"
+            class="submit-button"
+            name="button"
+            value="{{data.id}}"
+          >
+            Submit
+          </button>
+          <br />
+          <br />
+          <button type="button" class="again" name="button" value="{{data.id}}">
+            Test Again
+          </button>
+        </form>
+      </div>
+
+      <!-- <div class = 'col-md-1'></div> -->
+
+      <div class="col-md-2">
+        <div class="row">
+          <div class="col-md-12">
+            <button class="hovertext" id="hint" data-hover="{{data.hint}}">
+              Hint
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="progress-container">
+  <progress value="75" max="100">75%</progress>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+
+<script async src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let data = {{data|tojson}}
+  var player;
+  var videoId= data['video'];
+  var startSeconds = data['start'];  // set your own video start time when loop play
+  var endSeconds = data['stop'];   // set your own video end time when loop play
+  var playerConfig = {
+      // height: '200',
+      width: '90%',
+      videoId: videoId,
+      playerVars: {
+          autoplay: 0,            // Not auto-play the video on load
+          controls: 0,            // hide pause/play buttons in player
+          showinfo: 0,            // Hide the video title(deprecated)
+          modestbranding: 1,      // Hide the Youtube Logo(do not remove all logos)
+          fs: 1,                  // Hide the full screen button
+          cc_load_policy: 0,      // Hide closed captions
+          iv_load_policy: 3,      // Hide the Video Annotations
+          start: startSeconds,
+          end: endSeconds,
+          autohide: 1,             // Hide video controls when playing
+      },
+      events: {
+          'onStateChange': onStateChange,       // reference to Iframe API
+          'onReady': onPlayerReady
+      }
+  };
+
+  //excute the video in div
+  function onYouTubePlayerAPIReady() {
+      player = new YT.Player('myvideo', playerConfig);
+  }
+
+  function onPlayerReady(event) {              // mute or unmute the video when loaded
+      if (data["mute"] == "no"){
+          event.target.playVideo();
+      }
+      else{
+          event.target.mute();
+      }
+
+  }
+
+  //repload the video when onStateChange=YT.PlayerState.ENDED)
+  function onStateChange(state) {
+      if (state.data === YT.PlayerState.ENDED) {
+          player.loadVideoById({
+              videoId: videoId,
+              startSeconds: startSeconds,
+              endSeconds: endSeconds
+          });
+      }
+  }
+</script>
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends 'nav.html' %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/quiz.css') }}"
+/>
+<script>
+  let correctChoice = {{correctChoice|tojson}};
+  let userChoice = {{userChoice|tojson}};
+</script>
+<script
+  type="text/javascript"
+  src="{{url_for('static', filename='js/quiz.js')}}"
+></script>
+
+<style>
+  progress {
+    opacity: 0;
+}
+.progress-container {
+    position: relative;
+    display: inline-block;
+    background: white;
+    height: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    width:100%;
+}
+.progress-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: orangered;
+    width: {{process}}%;
+}
+
+
+</style>
+<div id="dialog" title="Confirmation Required">
+  Leaving the page will automatically zero out the score. Are you sure about
+  this?
+</div>
+
+<div id="dialog-check" title="Confirmation Required">
+  You need to select one answer to submit the quiz.
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h1>Question {{data.id}}</h1>
+  </div>
+  <div class = 'col-md-8' id = 'question'>
+    <ul>
+      <li class = 'feedback' id = 'q1'>
+        1
+      </li>
+      <li class = 'feedback' id = 'q2'>
+        2
+      </li>
+      <li class = 'feedback' id = 'q3'>
+        3
+      </li>
+      <li class = 'feedback' id = 'q4'>
+        4
+      </li>
+      <li class = 'feedback' id = 'q5'>
+        5
+      </li>
+      <li class = 'feedback' id = 'q6'>
+        6
+      </li>
+      <li class = 'feedback' id = 'q7'>
+        7
+      </li>
+      <li class = 'feedback' id = 'q8'>
+        8
+      </li>
+      <li class = 'feedback' id = 'q9'>
+        9
+      </li>
+      <li class = 'feedback' id = 'q10'>
+        10
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>{{data.question}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{data.img}}" alt="question{{data.id}}'s media" />
+      </div>
+      <div class="col-md-4">
+        <form action="/checkAnswer" method="POST">
+          {% for each in data.choice %}
+          <div class="choice">
+            <input type="radio" name="radAnswer" value="{{each.selection}}"/>
+            <span>{{each.selection}}</span>
+            <br />
+          </div>
+          {% endfor %}
+          <button
+            type="submit"
+            class="submit-button"
+            name="button"
+            value="{{data.id}}"
+          >
+            Submit
+          </button>
+          <br />
+          <br />
+          <button type="button" class="again" name="button" value="{{data.id}}">
+            Test Again
+          </button>
+        </form>
+      </div>
+      <!-- <div class="col-md-1"></div> -->
+
+      <div class="col-md-2">
+        <div class="row">
+          <div class="col-md-12">
+            <button class="hovertext" id="hint" data-hover="{{data.hint}}">
+              Hint
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="progress-container">
+  <progress value="75" max="100">75%</progress>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'nav.html' %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/final.css') }}"
+/>
+<script>
+  let correctChoice = {{correctChoice|tojson}};
+  let userChoice = {{userChoice|tojson}};
+</script>
+<script
+  type="text/javascript"
+  src="{{url_for('static', filename='js/final.js')}}"
+></script>
+<div class="row">
+  <h1>You have completed the test</h1>
+</div>
+<div class = class="row" id = 'question'>
+  <ul>
+    <li class = 'feedback' id = 'q1'>
+      1
+    </li>
+    <li class = 'feedback' id = 'q2'>
+      2
+    </li>
+    <li class = 'feedback' id = 'q3'>
+      3
+    </li>
+    <li class = 'feedback' id = 'q4'>
+      4
+    </li>
+    <li class = 'feedback' id = 'q5'>
+      5
+    </li>
+    <li class = 'feedback' id = 'q6'>
+      6
+    </li>
+    <li class = 'feedback' id = 'q7'>
+      7
+    </li>
+    <li class = 'feedback' id = 'q8'>
+      8
+    </li>
+    <li class = 'feedback' id = 'q9'>
+      9
+    </li>
+    <li class = 'feedback' id = 'q10'>
+      10
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <h2>Your Score is <span>{{score}}/10</span></h2>
+</div>
+<div class="row">
+  <button type="button" id="back">Back To Home Page</button>
+</div>
+
+<br>
+<br>
+{% endblock %}

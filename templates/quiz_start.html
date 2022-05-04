@@ -1,0 +1,66 @@
+{% extends 'nav.html' %} {% block content %}
+
+<script>
+  $(document).ready(function () {
+    $("#quiz").click(function () {
+      /* redirect the webpage to quiz.html */
+      window.location.assign("/quiz/1");
+    });
+  });
+</script>
+<style>
+  body {
+    /* background: linear-gradient(to top, #0000ff 0%, #6699ff 79%); */
+    background-color: #0854c5df;
+  }
+  .row {
+    margin-bottom: 10px;
+  }
+  #test-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #quiz {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    background-color: orangered;
+    border-radius: 10px;
+    border: orangered;
+  }
+  #quiz:hover {
+    color: black;
+  }
+  #r2 {
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+  #r1 {
+    color: darkgray;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  #r0 {
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 50px;
+  }
+</style>
+
+<div class="row" id="r0">
+  <div id="test-intro">Quiz Time</div>
+</div>
+
+<div class="row" id="r1">
+  <div id="test-intro">
+    Test on yourself and see if you are a master of basketball rules
+  </div>
+</div>
+
+<div class="row" id="r2">
+  <button type="button" class="btn btn-success" id="quiz">START</button>
+</div>
+
+{% endblock %}
