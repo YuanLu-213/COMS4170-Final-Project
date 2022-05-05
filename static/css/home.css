@@ -1,10 +1,32 @@
+/* header{
+  font-size: 100px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  background-image: url("{{url_for('static', filename='img/Ball.jpeg')}}");
+  background-size: 1700px;
+  padding-left: 30px;
+  height: 200px;
+  padding-top: 8px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+} */
 .row1 {
   margin-top: 50px;
   margin-bottom: 30px;
 }
-#home-intro {
+.home-intro {
   text-align: center;
   font-size: xx-large;
+  color: rgb(216, 214, 214);
+  margin-bottom: 30px;
+}
+#welcome {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
   color: white;
   margin-bottom: 30px;
 }
@@ -18,19 +40,20 @@ button {
 #button-1 {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
-  font-size: x-large;
+  margin-bottom: 30px;
+  font-size: xx-large;
 }
 #resume {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
-  font-size: x-large;
+  margin-bottom: 30px;
+  font-size: xx-large;
 }
 #button-3 {
   margin-left: auto;
   margin-right: auto;
-  font-size: x-large;
+  font-size: xx-large;
+  margin-bottom: 50px;
 }
 .disabled {
   background-color: darkgray;

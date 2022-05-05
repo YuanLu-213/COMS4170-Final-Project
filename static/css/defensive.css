@@ -1,3 +1,6 @@
+.container{
+  margin-top: 200px;
+}
 .intro {
   text-align: center;
   margin-left: auto;
@@ -10,11 +13,20 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  color: white;
+  color: rgb(216, 214, 214);
 }
 #def-intro {
   font-size: xx-large;
+  color: rgb(216, 214, 214);
+}
+#def-intro-2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  font-size: 50px;
   color: white;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 button {
   background-color: black;
@@ -23,5 +35,5 @@ button {
 #next {
   background-color: orangered;
   border: 0ch;
-  font-size: x-large;
+  font-size: xx-large;
 }
