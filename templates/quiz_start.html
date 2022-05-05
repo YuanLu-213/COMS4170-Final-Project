@@ -37,7 +37,7 @@
     margin-bottom: 100px;
   }
   #r1 {
-    color: darkgray;
+    color: rgb(216, 214, 214);
     font-size: 20px;
     margin-top: 5px;
   }
@@ -49,18 +49,22 @@
   }
 </style>
 
-<div class="row" id="r0">
-  <div id="test-intro">Quiz Time</div>
-</div>
-
-<div class="row" id="r1">
-  <div id="test-intro">
-    Test on yourself and see if you are a master of basketball rules
+<div class="container">
+  <div class="row" id="r0">
+    <div id="test-intro">Quiz Time</div>
+  </div>
+  
+  <div class="row" id="r1">
+    <div id="test-intro">
+      Test on yourself and see if you are a master of basketball rules
+    </div>
+  </div>
+  
+  <div class="row" id="r2">
+    <button type="button" class="btn btn-success" id="quiz">START</button>
   </div>
 </div>
 
-<div class="row" id="r2">
-  <button type="button" class="btn btn-success" id="quiz">START</button>
-</div>
+
 
 {% endblock %}

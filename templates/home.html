@@ -23,13 +23,38 @@
       }
   });
 </script>
-
+<style>
+  header{
+  font-size: 100px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  background-image: url("{{url_for('static', filename='img/Ball.jpeg')}}");
+  background-size: cover;
+  padding-left: 30px;
+  height: 200px;
+  padding-top: 8px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+</style>
 <div class="container-fluid">
+  <header>Mr.Basketball</header>
+</div>
+<div class="container">
   <div class="row row1">
-    <span id="home-intro"
-      >Welcome to Mr.Basketball. Here you can learn about all types of rules in
-      basketball. No matter if you are a player, a fan of basketball, or a
+    <span id="welcome">
+      Welcome to Mr.Basketball
+    </span>
+    <span class="home-intro">
+      Here you can learn about all types of rules in
+      basketball. 
+      <br>
+      <br>
+      No matter if you are a player, a fan of basketball, or a
       basketball rookie, this site will make you a master of basketball rules.
+      <br>
+      <br>
       You can also test yourself and compete with others to see who is the real
       Mr/Ms.Basketball.
     </span>
