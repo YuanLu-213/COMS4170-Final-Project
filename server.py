@@ -18,7 +18,8 @@ learning = [
         'video': ['https://www.youtube.com/embed/WPBdbYR5Bnk?start=133&end=340&controls=0'],
         'vacc': 'Video of a blocking foul',
         'hint': [['Establish position', 'A defensive player with both feet standing on the ground and torso square facing the opponent is said to have established position.',"0"],
-                ['Learn Better with the video', 'In the video, it teaches you the blocking foul in details and you can watch in-gaame plays to help you determine whether it is a blocking foul.']],
+                ],
+        'learn': 'In the video, it teaches you the blocking foul in details and you can watch in-gaame plays to help you determine whether it is a blocking foul.',
         'type': 'd'
     },
     {
@@ -35,7 +36,8 @@ learning = [
             'https://www.youtube.com/embed/ERzhKUakC6M?end=20&controls=0'
         ],
         'vacc': 'Video of a illegal use of hands',
-        'hint':[['Learn Better with the video', 'In the video, it explains with in-game example why illegal use of hand is called by the referee and helps you understand the rule better.']],
+        'hint':[],
+        'learn':  'In the video, it explains with in-game example why illegal use of hand is called by the referee and helps you understand the rule better.',
         'type': 'd'
     },
     {
@@ -48,7 +50,8 @@ learning = [
             "https://www.youtube.com/embed/01NsieAjzdU?start=117&end=229&controls=0"
         ],
         'vacc': 'Video of hand check',
-        'hint':[['Learn Better with the video', 'In the video, it teaches you the hand check in details with examples.']],
+        'hint':[],
+        'learn':'In the video, it teaches you the hand check in details with examples.', 
         'type': 'd'
     },
     {
@@ -62,7 +65,8 @@ learning = [
         'hint': [
             ['Pivot Foot', "When a player lands with one foot when performs a jump shot, the landing foot is the pivot foot, and when a players lands with both feet, either can be pivot foot.","0"],
             ['Gather Step', "Gather step refers to the step players take when they stop dribbling and gain full control of the ball. The two steps starts counting after the gather step. So while moving and having one foot on the floor while catching the ball or ending a dribble the next foot or feet to touch the floor is step one and will become the pivot foot. The gather step is step 0.","1"],
-            ['Learn Better with the video', 'In the video, it teaches you what is gather step and how the steps are counted in detail. You can also learn from in-game play.']],
+            ],
+        'learn': 'In the video, it teaches you what is gather step and how the steps are counted in detail. You can also learn from in-game play.',
         'type': 'o'
     },
     # {
@@ -92,7 +96,8 @@ learning = [
             "https://www.youtube.com/embed/H8bbQZCHSF8?start=419&end=441&controls=0"
         ],
         'vacc': 'Video of an illegal screen',
-        'hint':[['Learn Better with the video', 'In the video, it includes several examples of illegal screen to help you learn better and accurately identify an illegal screen when it happens.']],
+        'hint':[],
+        'learn': 'In the video, it includes several examples of illegal screen to help you learn better and accurately identify an illegal screen when it happens.',
         'type': 'o'
     },
     {
@@ -105,7 +110,8 @@ learning = [
             "https://www.youtube.com/embed/WnNT0Sy226w?start=129&end=153&controls=0"
         ],
         'vacc': 'Video of charging foul',
-        'hint':[['Learn Better with the video', 'In the video, it shows you all the charging foul drew by 2022 Defensive player of the year Marcus Smart and allows you to learn from the plays.']],
+        'hint':[],
+        'learn': 'In the video, it shows you all the charging foul drew by 2022 Defensive player of the year Marcus Smart and allows you to learn from the plays.',
         'type': 'o'
     },
 ]
